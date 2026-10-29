@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings · Slough SEND Parent Carer Forum</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #2c7a7b 0%, #4fd1c5 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="flex min-h-screen">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="hidden md:flex flex-col w-64 bg-white border-r border-gray-100 fixed h-screen z-40">
+            <!-- Logo -->
+            <div class="h-20 flex items-center px-6 border-b border-gray-100">
+                <a href="admin.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-teal-700 text-sm leading-none">Slough SEND</span>
+                        <span class="text-xs text-gray-500 leading-none mt-1">Admin Panel</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex-grow p-4 space-y-1 overflow-y-auto">
+                <p class="px-3 py-2 text-xs font-bold text-gray-400 uppercase tracking-wider">Main</p>
+                <a href="admin.html" class="flex items-center px-3 py-2.5 rounded-lg text-gray-600 hover:bg-gray-50 transition">
+                    <svg class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                    Dashboard
+                </a>
+                
+                <p class="px-3 py-2 mt-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Management</p>
+                <a href="admin-users.html" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-gray-600 hover:bg-gray-50 transition">
+                    <span class="flex items-center">
+                        <svg class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                        Members
+                    </span>
+                    <span class="bg-orange-100 text-orange-600 text-xs px-2 py-0.5 rounded-full font-semibold">3</span>
+                </a>
+                <a href="admin-posts.html" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-gray-600 hover:bg-gray-50 transition">
+                    <span class="flex items-center">
+                        <svg class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                        Posts & Moderation
+                    </span>
+                    <span class="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full font-semibold">2</span>
+                </a>
+                <a href="admin-events.html" class="flex items-center px-3 py-2.5 rounded-lg text-gray-600 hover:bg-gray-50 transition">
+                    <svg class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    Events
+                </a>
+                <a href="admin-resources.html" class="flex items-center px-3 py-2.5 rounded-lg text-gray-600 hover:bg-gray-50 transition">
+                    <svg class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                    Resources
+                </a>
+
+                <p class="px-3 py-2 mt-4 text-xs font-bold text-gray-400 uppercase tracking-wider">System</p>
+                <a href="admin-settings.html" class="flex items-center px-3 py-2.5 rounded-lg bg-teal-50 text-teal-700 font-medium">
+                    <svg class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    Settings
+                </a>
+                <a href="index.html" class="flex items-center px-3 py-2.5 rounded-lg text-red-600 hover:bg-red-50 transition">
+                    <svg class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+                    Exit to Site
+                </a>
+            </nav>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="flex-grow md:ml-64">
+            <!-- Top Bar -->
+            <header class="bg-white border-b border-gray-100 h-20 flex items-center justify-between px-6 sticky top-0 z-30">
+                <div>
+                    <h1 class="text-xl font-bold text-gray-900">System Settings</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-500 hover:text-teal-600 transition">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+                    </button>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-9 h-9 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold border-2 border-orange-200">IA</div>
+                        <div class="hidden sm:block">
+                            <p class="font-semibold text-sm text-gray-900">Imran Anwar</p>
+                            <p class="text-xs text-gray-500">Chair / Admin</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="p-6 space-y-8 max-w-5xl">
+                
+                <!-- ===== General Settings ===== -->
+                <section class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 border-b border-gray-100">
+                        <h2 class="text-lg font-bold text-gray-900">General Settings</h2>
+                        <p class="text-sm text-gray-500">Basic information about your forum.</p>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="site-name" class="block text-sm font-medium text-gray-700 mb-1">Forum Name</label>
+                                <input type="text" id="site-name" value="Slough SEND Parent Carer Forum" class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                            </div>
+                            <div>
+                                <label for="support-email" class="block text-sm font-medium text-gray-700 mb-1">Support Contact Email</label>
+                                <input type="email" id="support-email" value="info@sloughsendpcf.org" class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="footer-text" class="block text-sm font-medium text-gray-700 mb-1">Footer Copyright Text</label>
+                            <input type="text" id="footer-text" value="© 2023 Slough SEND Parent Carer Forum. Funded by the Department for Education." class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== Community & Privacy Rules ===== -->
+                <section class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 border-b border-gray-100">
+                        <h2 class="text-lg font-bold text-gray-900">Community & Privacy Rules</h2>
+                        <p class="text-sm text-gray-500">Control how members interact and keep the forum safe.</p>
+                    </div>
+                    <div class="p-6 divide-y divide-gray-100">
+                        
+                        <!-- Setting 1 -->
+                        <div class="flex items-center justify-between py-4 first:pt-0">
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900">Manual Member Approval</h3>
+                                <p class="text-sm text-gray-500">Require admins to manually approve all new registrations before they can log in.</p>
+                            </div>
+                            <button class="relative inline-flex h-6 w-11 items-center rounded-full bg-teal-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                <span class="inline-block h-4 w-4 transform rounded-full bg-white transition translate-x-6"></span>
+                            </button>
+                        </div>
+
+                        <!-- Setting 2 -->
+                        <div class="flex items-center justify-between py-4">
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900">Allow Private Messaging</h3>
+                                <p class="text-sm text-gray-500">Let parents send private messages to each other within the platform.</p>
+                            </div>
+                            <button class="relative inline-flex h-6 w-11 items-center rounded-full bg-teal-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                <span class="inline-block h-4 w-4 transform rounded-full bg-white transition translate-x-6"></span>
+                            </button>
+                        </div>
+
+                        <!-- Setting 3 -->
+                        <div class="flex items-center justify-between py-4">
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900">Enforce Pseudonyms</h3>
+                                <p class="text-sm text-gray-500">Warn users during registration not to use their real names or their children's real names.</p>
+                            </div>
+                            <button class="relative inline-flex h-6 w-11 items-center rounded-full bg-teal-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                <span class="inline-block h-4 w-4 transform rounded-full bg-white transition translate-x-6"></span>
+                            </button>
+                        </div>
+
+                        <!-- Setting 4 -->
+                        <div class="flex items-center justify-between py-4 last:pb-0">
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900">Hide Forum from Search Engines</h3>
+                                <p class="text-sm text-gray-500">Prevent Google and other search engines from indexing any part of the forum.</p>
+                            </div>
+                            <button class="relative inline-flex h-6 w-11 items-center rounded-full bg-teal-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                <span class="inline-block h-4 w-4 transform rounded-full bg-white transition translate-x-6"></span>
+                            </button>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- ===== Email Notifications ===== -->
+                <section class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="p-6 border-b border-gray-100">
+                        <h2 class="text-lg font-bold text-gray-900">Admin Email Notifications</h2>
+                        <p class="text-sm text-gray-500">What should trigger an email alert to the admin team?</p>
+                    </div>
+                    <div class="p-6 divide-y divide-gray-100">
+                        
+                        <!-- Notif 1 -->
+                        <div class="flex items-center justify-between py-4 first:pt-0">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+                                <h3 class="text-sm font-medium text-gray-900">New User Registration</h3>
+                            </div>
+                            <button class="relative inline-flex h-6 w-11 items-center rounded-full bg-teal-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                <span class="inline-block h-4 w-4 transform rounded-full bg-white transition translate-x-6"></span>
+                            </button>
+                        </div>
+
+                        <!-- Notif 2 -->
+                        <div class="flex items-center justify-between py-4">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                                <h3 class="text-sm font-medium text-gray-900">Post Reported by User</h3>
+                            </div>
+                            <button class="relative inline-flex h-6 w-11 items-center rounded-full bg-teal-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                <span class="inline-block h-4 w-4 transform rounded-full bg-white transition translate-x-6"></span>
+                            </button>
+                        </div>
+
+                        <!-- Notif 3 -->
+                        <div class="flex items-center justify-between py-4 last:pb-0">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                <h3 class="text-sm font-medium text-gray-900">Weekly Membership Summary</h3>
+                            </div>
+                            <button class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                                <span class="inline-block h-4 w-4 transform rounded-full bg-white transition translate-x-1"></span>
+                            </button>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Save Button -->
+                <div class="flex justify-end">
+                    <button class="bg-orange-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-600 transition shadow-sm flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                        Save Changes
+                    </button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // You can add JS here to handle toggle switch states and form submission via Livewire/Alpine.js
+    </script>
+</body>
+</html>

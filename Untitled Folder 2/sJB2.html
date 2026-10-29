@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEND Jargon Buster · Slough SEND Parent Carer Forum</title>
+    <meta name="description" content="Search and browse common SEND terms and phrases — from EHCPs and SENCos to the Local Offer — explained in plain English.">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #2c7a7b 0%, #4fd1c5 100%); }
+        /* Hide scrollbar on the mobile A–Z strip */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-teal-700 text-lg leading-none">Slough SEND</span>
+                        <span class="text-xs text-gray-500 leading-none mt-1">Parent Carer Forum</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-teal-600 font-medium transition">About Us</a>
+                    <a href="events.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Events</a>
+                    <!-- "Support" stays active — this is a sub-page of Support & Resources -->
+                    <a href="support.html" class="text-teal-700 font-bold transition">Support</a>
+                    <a href="#" class="text-teal-700 border border-teal-700 px-5 py-2 rounded-full hover:bg-teal-50 font-medium transition">Login</a>
+                    <a href="#" class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 font-medium shadow-sm transition">Join Forum</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-gray-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                <a href="events.html" class="text-gray-600 hover:text-teal-600 font-medium">Events</a>
+                <a href="support.html" class="text-teal-700 font-bold">Support</a>
+                <div class="flex space-x-3 pt-2">
+                    <a href="#" class="flex-1 text-center text-teal-700 border border-teal-700 px-4 py-2 rounded-full font-medium">Login</a>
+                    <a href="#" class="flex-1 text-center bg-orange-500 text-white px-4 py-2 rounded-full font-medium">Join Forum</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <header class="pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-bg z-0"></div>
+        <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2070&auto=format&fit=crop');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-medium mb-4">Guidance & Help</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">SEND Jargon Buster</h1>
+            <p class="text-lg text-teal-50 max-w-2xl mx-auto">Demystifying terms and phrases you will hear on your SEND carer journey.</p>
+        </div>
+    </header>
+
+    <!-- ===== JARGON TOOLBAR + RESULTS ===== -->
+    <section class="bg-gray-50 pb-20">
+        <!-- Sticky toolbar: search + A-Z stay visible while scrolling the list -->
+        <div class="sticky top-20 z-40 bg-gray-50/95 backdrop-blur-sm border-b border-gray-100 py-5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Big search bar -->
+                <div class="max-w-2xl mx-auto">
+                    <div class="bg-white rounded-full shadow-lg border border-gray-100 flex items-center pl-5 pr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <input id="searchInput" type="text" autocomplete="off" aria-label="Search jargon terms"
+                               class="flex-grow px-4 py-3.5 text-base md:text-lg focus:outline-none placeholder-gray-400 bg-transparent"
+                               placeholder="Search for a term — e.g. EHCP or Annual Review">
+                        <button id="clearBtn" class="hidden w-9 h-9 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition shrink-0" aria-label="Clear search">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- A-Z filter (buttons generated by JS, letters enable as terms exist) -->
+                <nav id="azNav" aria-label="Filter terms by first letter" class="no-scrollbar flex gap-1.5 md:gap-2 mt-4 overflow-x-auto md:overflow-x-visible md:flex-wrap md:justify-center"></nav>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+            <p id="resultsInfo" class="text-center text-sm text-gray-500 font-medium mb-10"></p>
+
+            <!-- Term cards render here, grouped by letter -->
+            <div id="jargonContainer"></div>
+
+            <!-- Empty state -->
+            <div id="emptyState" class="hidden text-center py-16">
+                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-5 text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">No terms found</h3>
+                <p class="text-gray-500 mb-6">We couldn't find anything matching <span id="emptyQuery" class="font-semibold"></span>. Try a different word or clear your search.</p>
+                <button id="emptyClearBtn" class="bg-teal-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-teal-700 transition">Clear Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-900 rounded-3xl p-10 md:p-12 text-center relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl"></div>
+
+                <div class="relative">
+                    <span class="inline-block bg-orange-500/20 text-orange-400 px-4 py-1 rounded-full text-sm font-medium mb-6">Help Us Grow</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Spotted a term we're missing?</h2>
+                    <p class="text-gray-300 max-w-xl mx-auto mb-8 leading-relaxed">Our Jargon Buster is always growing. If there's a word or phrase you keep hearing and can't find here, let us know and we'll add a plain-English explanation.</p>
+                    <!-- TODO: Link to contact page / suggestion form -->
+                    <a href="#" class="inline-flex items-center bg-orange-500 text-white px-7 py-3 rounded-full font-semibold hover:bg-orange-600 transition">
+                        Suggest a Term
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-900 text-gray-300 pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                        <span class="font-bold text-white text-lg">Slough SEND PCF</span>
+                    </a>
+                    <p class="text-sm text-gray-400">Supporting families. Empowering voices. Creating positive change together. Every voice matters.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Emergency Contacts</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-red-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" fill-rule="evenodd"/></svg> NHS 111 - Non-emergency</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-blue-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" clip-rule="evenodd" fill-rule="evenodd"/></svg> 999 - Emergency Services</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-green-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" fill-rule="evenodd"/><path d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" fill-rule="evenodd"/></svg> Childline - 0800 1111</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Get Involved</h4>
+                    <p class="text-sm text-gray-400 mb-4">Become a member today and join our private community.</p>
+                    <a href="#" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-600 transition">Request Access</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2023 Slough SEND Parent Carer Forum. Funded by the Department for Education. Independent of the council and NHS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar shadow on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+
+    <!-- ===== JARGON BUSTER ENGINE ===== -->
+    <script>
+        // ============================================================
+        // SAMPLE DATA — replace this array with your admin CRUD feed.
+        //
+        // Shape: { term: "AAC" (required), full: "Augmentative and..." (optional), definition: "..." (optional) }
+        // Cards adapt automatically if 'full' or 'definition' are missing.
+        // Entries are sorted and grouped by first letter automatically,
+        // and terms starting with a number are grouped under "#".
+        //
+        // When your CRUD API is ready, swap for something like:
+        //   const res = await fetch('/api/jargon');
+        //   const jargonData = await res.json();
+        // ============================================================
+        const jargonData = [
+            { term: "AAC", full: "Augmentative and Alternative Communication", definition: "Ways of communicating that support or replace speech — for example picture boards, symbol charts, or voice-output devices." },
+            { term: "Additional Needs", definition: "A broad term for children who need extra help with learning, health or development, beyond what is typically provided." },
+            { term: "Annual Review", definition: "The yearly check of an EHC plan to make sure the needs and support set out in it are still right for your child." },
+            { term: "EHCP", full: "Education, Health and Care Plan", definition: "A legal document that sets out a child or young person's special educational needs and the support they must receive." },
+            { term: "Local Offer", definition: "The information every local authority must publish about the SEND services available in its area and how families can access them." },
+            { term: "SENCo", full: "Special Educational Needs Coordinator", definition: "The teacher responsible for coordinating SEND support within a school or setting." },
+            { term: "Tribunal", definition: "The independent panel parents and young people can appeal to about SEND decisions, such as refusals to assess or issue an EHC plan." }
+        ];
+
+        const container = document.getElementById('jargonContainer');
+        const infoLine = document.getElementById('resultsInfo');
+        const emptyState = document.getElementById('emptyState');
+        const emptyQueryText = document.getElementById('emptyQuery');
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearBtn');
+        const emptyClearBtn = document.getElementById('emptyClearBtn');
+        const azNav = document.getElementById('azNav');
+
+        let activeLetter = 'all';
+        let query = '';
+
+        // Group letter for a term ("EHCP" -> "E"; "19+ funding" -> "#")
+        function getGroupLetter(term) {
+            const c = term.trim().charAt(0).toUpperCase();
+            return /[A-Z]/.test(c) ? c : '#';
+        }
+
+        // Which letters actually have entries (drives pill enable/disable)
+        const letterCounts = {};
+        jargonData.forEach(item => {
+            const l = getGroupLetter(item.term);
+            letterCounts[l] = (letterCounts[l] || 0) + 1;
+        });
+
+        // Build the A–Z filter buttons
+        const pillLetters = ['all'].concat('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''));
+        azNav.innerHTML = pillLetters.map(letter => {
+            const hasTerms = letter === 'all' || letterCounts[letter];
+            return `<button type="button" data-letter="${letter}" ${hasTerms ? '' : 'disabled'}>${letter === 'all' ? 'All' : letter}</button>`;
+        }).join('');
+
+        function escapeHtml(str) {
+            return String(str).replace(/[&<>"']/g, s => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[s]));
+        }
+
+        // Highlight the searched word inside rendered text
+        function highlight(text) {
+            const safe = escapeHtml(text);
+            if (!query.trim()) return safe;
+            const escaped = query.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            return safe.replace(new RegExp('(' + escaped + ')', 'gi'), '<mark class="bg-amber-200/70 text-gray-900 rounded px-0.5">$1</mark>');
+        }
+
+        function updatePills() {
+            azNav.querySelectorAll('button').forEach(btn => {
+                const isActive = btn.dataset.letter === activeLetter;
+                let cls = 'flex items-center justify-center h-8 md:h-9 rounded-lg text-xs md:text-sm font-semibold transition shrink-0 ';
+                cls += btn.dataset.letter === 'all' ? 'px-3.5 ' : 'w-8 md:w-9 ';
+                if (isActive) cls += 'bg-teal-600 text-white shadow-sm';
+                else if (btn.disabled) cls += 'bg-gray-100 text-gray-300 cursor-default';
+                else cls += 'bg-white border border-gray-200 text-gray-600 hover:bg-teal-50 hover:text-teal-700 hover:border-teal-300';
+                btn.className = cls;
+            });
+        }
+
+        function cardHtml(item) {
+            return `
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <h3 class="font-bold text-gray-900">${highlight(item.term)}</h3>
+                    ${item.full ? `<p class="text-sm font-semibold text-teal-600 mt-1 mb-2">${highlight(item.full)}</p>` : ''}
+                    ${item.definition ? `<p class="text-sm text-gray-600 leading-relaxed mt-1">${highlight(item.definition)}</p>` : ''}
+                </div>`;
+        }
+
+        function render() {
+            const q = query.trim().toLowerCase();
+
+            let items = jargonData.filter(item => {
+                const matchesLetter = activeLetter === 'all' || getGroupLetter(item.term) === activeLetter;
+                const haystack = (item.term + ' ' + (item.full || '') + ' ' + (item.definition || '')).toLowerCase();
+                return matchesLetter && (!q || haystack.includes(q));
+            });
+
+            items.sort((a, b) => a.term.localeCompare(b.term));
+
+            // Result count line
+            if (q) {
+                infoLine.innerHTML = items.length + ' result' + (items.length === 1 ? '' : 's') + ' for &ldquo;' + escapeHtml(query.trim()) + '&rdquo;';
+            } else if (activeLetter !== 'all') {
+                infoLine.textContent = 'Showing ' + items.length + ' term' + (items.length === 1 ? '' : 's') + ' starting with "' + activeLetter + '"';
+            } else {
+                infoLine.textContent = 'Showing all ' + jargonData.length + ' terms';
+            }
+
+            // Group by letter
+            const groups = {};
+            items.forEach(item => {
+                const l = getGroupLetter(item.term);
+                (groups[l] = groups[l] || []).push(item);
+            });
+
+            container.innerHTML = Object.keys(groups).sort().map(letter => `
+                <div class="mb-12">
+                    <div class="flex items-center mb-5">
+                        <div class="w-10 h-10 gradient-bg rounded-xl text-white font-bold flex items-center justify-center text-lg">${letter}</div>
+                        <span class="ml-3 text-sm font-medium text-gray-400">${groups[letter].length} term${groups[letter].length > 1 ? 's' : ''}</span>
+                    </div>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        ${groups[letter].map(cardHtml).join('')}
+                    </div>
+                </div>
+            `).join('');
+
+            emptyState.classList.toggle('hidden', items.length > 0);
+            emptyQueryText.textContent = query.trim() || 'your search';
+
+            updatePills();
+        }
+
+        // Events
+        searchInput.addEventListener('input', () => {
+            query = searchInput.value;
+            activeLetter = 'all'; // searching always looks across everything
+            clearBtn.classList.toggle('hidden', !query);
+            render();
+        });
+
+        clearBtn.addEventListener('click', () => {
+            query = '';
+            searchInput.value = '';
+            clearBtn.classList.add('hidden');
+            render();
+            searchInput.focus();
+        });
+
+        azNav.addEventListener('click', (e) => {
+            const btn = e.target.closest('button');
+            if (!btn || btn.disabled) return;
+            activeLetter = btn.dataset.letter;
+            render();
+        });
+
+        emptyClearBtn.addEventListener('click', () => {
+            query = '';
+            activeLetter = 'all';
+            searchInput.value = '';
+            clearBtn.classList.add('hidden');
+            render();
+        });
+
+        // Initial render
+        render();
+    </script>
+</body>
+</html>

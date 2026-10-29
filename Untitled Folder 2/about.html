@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us · Slough SEND Parent Carer Forum</title>
+    <meta name="description" content="Slough SEND Parent Carer Forum is run entirely by parent carers, for parent carers. Learn about our vision, values, and how we work alongside local services.">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #2c7a7b 0%, #4fd1c5 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-teal-700 text-lg leading-none">Slough SEND</span>
+                        <span class="text-xs text-gray-500 leading-none mt-1">Parent Carer Forum</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Home</a>
+                    <a href="about.html" class="text-teal-700 font-bold transition">About Us</a>
+                    <a href="index.html#resources" class="text-gray-600 hover:text-teal-600 font-medium transition">Resources</a>
+                    <a href="index.html#team" class="text-gray-600 hover:text-teal-600 font-medium transition">Our Team</a>
+                    <a href="#" class="text-teal-700 border border-teal-700 px-5 py-2 rounded-full hover:bg-teal-50 font-medium transition">Login</a>
+                    <a href="#" class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 font-medium shadow-sm transition">Join Forum</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-gray-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
+                <a href="about.html" class="text-teal-700 font-bold">About Us</a>
+                <a href="index.html#resources" class="text-gray-600 hover:text-teal-600 font-medium">Resources</a>
+                <a href="index.html#team" class="text-gray-600 hover:text-teal-600 font-medium">Our Team</a>
+                <div class="flex space-x-3 pt-2">
+                    <a href="#" class="flex-1 text-center text-teal-700 border border-teal-700 px-4 py-2 rounded-full font-medium">Login</a>
+                    <a href="#" class="flex-1 text-center bg-orange-500 text-white px-4 py-2 rounded-full font-medium">Join Forum</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <header class="pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-bg z-0"></div>
+        <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-medium mb-4">Who We Are</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">Run by Parent Carers,<br>For Parent Carers.</h1>
+            <p class="text-lg text-teal-50 max-w-2xl mx-auto">We are an independent group working together with local services to improve the support on offer for children and young people with SEND in Slough.</p>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- What is a PCF? -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">What is a Parent Carer Forum?</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">A Parent Carer Forum (PCF) is a group of parents and carers of children and young people with special educational needs and disabilities (SEND) who work together with local services to improve the support on offer.</p>
+                    <p class="text-gray-600 leading-relaxed">By championing lived experiences and strengthening partnerships with local providers, we help shape a more responsive, inclusive, and effective SEND landscape.</p>
+                </div>
+                <div class="bg-teal-50 p-8 rounded-3xl border border-teal-100">
+                    <h3 class="text-xl font-bold text-teal-800 mb-6">In Short...</h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start"><span class="text-teal-600 mr-3 mt-1">👥</span> Run by SEND parent carers, for parent carers</li>
+                        <li class="flex items-start"><span class="text-teal-600 mr-3 mt-1">🛡️</span> Independent of the council and NHS</li>
+                        <li class="flex items-start"><span class="text-teal-600 mr-3 mt-1">🏛️</span> Funded by the Department for Education</li>
+                        <li class="flex items-start"><span class="text-teal-600 mr-3 mt-1">🧩</span> Part of the National Network of Parent Carer Forums</li>
+                        <li class="flex items-start"><span class="text-teal-600 mr-3 mt-1">📍</span> Exists in every local authority area in England</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Vision & Values -->
+            <div class="mb-24">
+                <div class="text-center mb-12">
+                    <span class="text-orange-600 font-semibold uppercase tracking-wide text-sm">Our Core Principles</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Our Vision & Values</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">To ensure every child and young person with SEND has the opportunity to thrive, and every family feels heard, valued and supported.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-2xl text-center border border-blue-100">
+                        <div class="text-4xl mb-4">💙</div>
+                        <h3 class="font-bold text-lg text-blue-900 mb-2">Parent Voice</h3>
+                        <p class="text-sm text-gray-600">Amplifying the real, lived experiences of Slough families.</p>
+                    </div>
+                    <div class="bg-orange-50 p-6 rounded-2xl text-center border border-orange-100">
+                        <div class="text-4xl mb-4">🧡</div>
+                        <h3 class="font-bold text-lg text-orange-900 mb-2">Inclusion</h3>
+                        <p class="text-sm text-gray-600">Ensuring every child and family is included in community life.</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-2xl text-center border border-green-100">
+                        <div class="text-4xl mb-4">💚</div>
+                        <h3 class="font-bold text-lg text-green-900 mb-2">Respect</h3>
+                        <p class="text-sm text-gray-600">Valuing every family's unique journey and perspectives.</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-2xl text-center border border-purple-100">
+                        <div class="text-4xl mb-4">💜</div>
+                        <h3 class="font-bold text-lg text-purple-900 mb-2">Partnership</h3>
+                        <p class="text-sm text-gray-600">Working hand-in-hand with local services and professionals.</p>
+                    </div>
+                    <div class="bg-yellow-50 p-6 rounded-2xl text-center border border-yellow-100">
+                        <div class="text-4xl mb-4">⭐</div>
+                        <h3 class="font-bold text-lg text-yellow-900 mb-2">Empowerment</h3>
+                        <p class="text-sm text-gray-600">Giving parents the knowledge and confidence to advocate.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Co-production & Partners -->
+            <div class="grid md:grid-cols-2 gap-12 mb-24">
+                <div class="bg-gray-900 text-white p-10 rounded-3xl">
+                    <h2 class="text-2xl font-bold mb-4">What is Co-production?</h2>
+                    <p class="text-gray-300 mb-4 leading-relaxed">Co-production means parent carers and services planning and designing SEND support <span class="text-orange-400 font-semibold">together, as equal partners</span>, rather than services deciding and families being consulted afterwards.</p>
+                    <p class="text-gray-300 leading-relaxed">We sit on regional and national groups and panels alongside health, education and local authority colleagues, bringing lived experience to the table at the point decisions are actually made.</p>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Who We Work Alongside</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                            <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-2xl mr-4">🏛️</div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">Slough Borough Council</h3>
+                                <p class="text-sm text-gray-500">Local government and social care.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                            <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-2xl mr-4">🏥</div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">NHS Frimley & NHS Berkshire</h3>
+                                <p class="text-sm text-gray-500">Local health and paediatric services.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                            <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-2xl mr-4">🏫</div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">Local Schools & Settings</h3>
+                                <p class="text-sm text-gray-500">Education providers across Slough.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                            <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-2xl mr-4">🤝</div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">National Network & DfE</h3>
+                                <p class="text-sm text-gray-500">Department for Education & NNPCF.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What We Do vs What We Don't Do -->
+            <div>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Setting Clear Boundaries</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">While we are here to amplify voices and help improve SEND services, there are some things we don't do. This helps manage expectations and keeps our community safe.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Do's -->
+                    <div class="bg-teal-50 p-8 rounded-3xl border border-teal-100">
+                        <h3 class="text-xl font-bold text-teal-800 mb-6 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            What We Can Do
+                        </h3>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex"><span class="text-teal-600 mr-3 mt-1 shrink-0">✔</span> Represent your voice and experiences to those who plan and deliver SEND services.</li>
+                            <li class="flex"><span class="text-teal-600 mr-3 mt-1 shrink-0">✔</span> Signpost you to the right local and national support.</li>
+                            <li class="flex"><span class="text-teal-600 mr-3 mt-1 shrink-0">✔</span> Sit on regional and national boards as part of co-production.</li>
+                            <li class="flex"><span class="text-teal-600 mr-3 mt-1 shrink-0">✔</span> Run events, workshops and drop-ins for parent carers.</li>
+                            <li class="flex"><span class="text-teal-600 mr-3 mt-1 shrink-0">✔</span> Gather feedback to help shape policy and service design.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Don'ts -->
+                    <div class="bg-red-50 p-8 rounded-3xl border border-red-100">
+                        <h3 class="text-xl font-bold text-red-800 mb-6 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Services We Don't Provide
+                        </h3>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex"><span class="text-red-500 mr-3 mt-1 shrink-0">✖</span> Individual advocacy or representing families at tribunals.</li>
+                            <li class="flex"><span class="text-red-500 mr-3 mt-1 shrink-0">✖</span> Investigating complaints or acting as a formal complaints service.</li>
+                            <li class="flex"><span class="text-red-500 mr-3 mt-1 shrink-0">✖</span> Counselling, therapy or peer-support groups.</li>
+                            <li class="flex"><span class="text-red-500 mr-3 mt-1 shrink-0">✖</span> Medical assessments, respite care or educational interventions.</li>
+                            <li class="flex"><span class="text-red-500 mr-3 mt-1 shrink-0">✖</span> Making decisions on behalf of families or promoting individual cases.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== CTA & FOOTER ===== -->
+    <footer class="bg-gray-900 text-gray-300 pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                        <span class="font-bold text-white text-lg">Slough SEND PCF</span>
+                    </a>
+                    <p class="text-sm text-gray-400">Supporting families. Empowering voices. Creating positive change together. Every voice matters.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Emergency Contacts</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-red-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" fill-rule="evenodd"/></svg> NHS 111 - Non-emergency</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-blue-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" clip-rule="evenodd" fill-rule="evenodd"/></svg> 999 - Emergency Services</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-green-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" fill-rule="evenodd"/><path d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" fill-rule="evenodd"/></svg> Childline - 0800 1111</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Get Involved</h4>
+                    <p class="text-sm text-gray-400 mb-4">Become a member today and join our private community.</p>
+                    <a href="#" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-600 transition">Request Access</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2023 Slough SEND Parent Carer Forum. Funded by the Department for Education. Independent of the council and NHS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar shadow on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>

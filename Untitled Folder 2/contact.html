@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us · Slough SEND Parent Carer Forum</title>
+    <meta name="description" content="Whether you’ve got a question, or you’re interested in getting more involved with the forum, we’d love to hear from you.">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #2c7a7b 0%, #4fd1c5 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-teal-700 text-lg leading-none">Slough SEND</span>
+                        <span class="text-xs text-gray-500 leading-none mt-1">Parent Carer Forum</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-teal-600 font-medium transition">About Us</a>
+                    <a href="events.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Events</a>
+                    <a href="support.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Support</a>
+                    <a href="#" class="text-teal-700 border border-teal-700 px-5 py-2 rounded-full hover:bg-teal-50 font-medium transition">Login</a>
+                    <a href="#" class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 font-medium shadow-sm transition">Join Forum</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-gray-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                <a href="events.html" class="text-gray-600 hover:text-teal-600 font-medium">Events</a>
+                <a href="support.html" class="text-gray-600 hover:text-teal-600 font-medium">Support</a>
+                <div class="flex space-x-3 pt-2">
+                    <a href="#" class="flex-1 text-center text-teal-700 border border-teal-700 px-4 py-2 rounded-full font-medium">Login</a>
+                    <a href="#" class="flex-1 text-center bg-orange-500 text-white px-4 py-2 rounded-full font-medium">Join Forum</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <header class="pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-bg z-0"></div>
+        <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2070&auto=format&fit=crop');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-medium mb-4">Get In Touch</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">Contact Us</h1>
+            <p class="text-lg text-teal-50 max-w-2xl mx-auto">Whether you’ve got a question, or you’re interested in getting more involved with the forum, we’d love to hear from you.</p>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12">
+                
+                <!-- Left Column: Contact Form -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-gray-100">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a message</h2>
+                        
+                        <form id="contactForm" class="space-y-6" onsubmit="event.preventDefault(); document.getElementById('formSuccess').classList.remove('hidden'); document.getElementById('contactForm').style.display='none';">
+                            
+                            <!-- Name & Email Grid -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Your name <span class="text-red-500">*</span></label>
+                                    <input type="text" required placeholder="Jane Doe" class="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 focus:outline-none transition">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email address <span class="text-red-500">*</span></label>
+                                    <input type="email" required placeholder="you@example.com" class="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 focus:outline-none transition">
+                                </div>
+                            </div>
+
+                            <!-- Dropdown -->
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">What's this about? <span class="text-red-500">*</span></label>
+                                <select required class="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 focus:outline-none transition bg-white text-gray-800">
+                                    <option value="" disabled selected>Select an option...</option>
+                                    <option value="general">General enquiry</option>
+                                    <option value="event">Event booking</option>
+                                    <option value="committee">Joining the steering committee</option>
+                                </select>
+                                <p class="text-xs text-gray-500 mt-2 italic">This helps us route your message.</p>
+                            </div>
+
+                            <!-- Subject -->
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Subject <span class="text-red-500">*</span></label>
+                                <input type="text" required placeholder="How can we help?" class="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 focus:outline-none transition">
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Message <span class="text-red-500">*</span></label>
+                                <textarea rows="5" required placeholder="Write your message here..." class="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 focus:outline-none transition resize-none"></textarea>
+                            </div>
+
+                            <!-- Consent Checkbox -->
+                            <div class="flex items-start bg-gray-50 p-4 rounded-xl border border-gray-100">
+                                <input type="checkbox" id="privacyConsent" required class="mt-1 h-5 w-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500 cursor-pointer">
+                                <label for="privacyConsent" class="ml-3 text-sm text-gray-600">
+                                    I'm happy for Slough SEND PCF to store my details in order to respond to my enquiry, in line with the <a href="#" class="text-teal-600 underline hover:text-teal-700">privacy policy</a>.
+                                </label>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="w-full md:w-auto bg-orange-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-600 transition shadow-md inline-flex items-center justify-center group">
+                                Send Message
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                            </button>
+                        </form>
+
+                        <!-- Success Message -->
+                        <div id="formSuccess" class="hidden text-center py-12">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+                            <p class="text-gray-500">Thank you for reaching out. We'll get back to you within 1-2 working days.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Sidebar Info -->
+                <div class="lg:col-span-1 space-y-8">
+                    
+                    <!-- Contact Details -->
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Other ways to reach us</h3>
+                        <ul class="space-y-5">
+                            <li class="flex items-start">
+                                <div class="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mr-4 shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-sm">Email</h4>
+                                    <a href="mailto:info@sloughsendpcf.org" class="text-teal-600 hover:underline text-sm">info@sloughsendpcf.org</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mr-4 shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-sm">Location</h4>
+                                    <p class="text-gray-500 text-sm">Slough, Berkshire</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mr-4 shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-sm">Response Time</h4>
+                                    <p class="text-gray-500 text-sm">Within 1-2 working days</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-6 pt-6 border-t border-gray-100">
+                            <a href="newsletter.html" class="text-orange-600 font-semibold text-sm inline-flex items-center hover:gap-2 transition-all">
+                                Subscribe to Newsletter
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="bg-gray-900 text-white p-8 rounded-3xl shadow-sm">
+                        <h3 class="text-xl font-bold mb-2">Connect on Socials</h3>
+                        <p class="text-gray-400 text-sm mb-6">You can also reach out through our social media accounts and engage with us through those platforms as well.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-blue-600 rounded-xl flex items-center justify-center transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-pink-600 rounded-xl flex items-center justify-center transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Why Join CTA -->
+                    <div class="gradient-bg p-8 rounded-3xl shadow-sm text-white">
+                        <h3 class="text-xl font-bold mb-4">Why you should join</h3>
+                        <ul class="space-y-4 text-teal-50">
+                            <li class="flex"><span class="text-white mr-3 mt-1 shrink-0">✔</span> Share your experiences and views</li>
+                            <li class="flex"><span class="text-white mr-3 mt-1 shrink-0">✔</span> Receive SEND-related news, events and surveys</li>
+                            <li class="flex"><span class="text-white mr-3 mt-1 shrink-0">✔</span> Contribute to shaping local SEND policy and services with the official forum</li>
+                        </ul>
+                        <a href="#" class="mt-6 inline-block bg-white text-teal-700 px-6 py-3 rounded-full font-bold text-sm hover:bg-gray-100 transition shadow-sm">Join Forum</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Bottom Note -->
+            <div class="mt-16 text-center max-w-3xl mx-auto border-t border-gray-200 pt-8">
+                <p class="text-sm text-gray-500">Funded by the Department for Education and a member of the National Network of Parent Carer Forums.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-900 text-gray-300 pt-20 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                        <span class="font-bold text-white text-lg">Slough SEND PCF</span>
+                    </a>
+                    <p class="text-sm text-gray-400">Supporting families. Empowering voices. Creating positive change together. Every voice matters.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Emergency Contacts</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-red-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" fill-rule="evenodd"/></svg> NHS 111 - Non-emergency</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-blue-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" clip-rule="evenodd" fill-rule="evenodd"/></svg> 999 - Emergency Services</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-green-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" fill-rule="evenodd"/><path d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" fill-rule="evenodd"/></svg> Childline - 0800 1111</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Get Involved</h4>
+                    <p class="text-sm text-gray-400 mb-4">Become a member today and join our private community.</p>
+                    <a href="#" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-600 transition">Request Access</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2023 Slough SEND Parent Carer Forum. Funded by the Department for Education. Independent of the council and NHS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar shadow on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>

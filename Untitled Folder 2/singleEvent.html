@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEND Café Monthly Drop-in · Slough SEND Parent Carer Forum</title>
+    <meta name="description" content="Join us at our upcoming parent drop-in sessions, workshops, and events. Connect with other Slough SEND parent carers.">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #2c7a7b 0%, #4fd1c5 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-teal-700 text-lg leading-none">Slough SEND</span>
+                        <span class="text-xs text-gray-500 leading-none mt-1">Parent Carer Forum</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-teal-600 font-medium transition">About Us</a>
+                    <a href="events.html" class="text-teal-700 font-bold transition">Events</a>
+                    <a href="index.html#team" class="text-gray-600 hover:text-teal-600 font-medium transition">Our Team</a>
+                    <a href="#" class="text-teal-700 border border-teal-700 px-5 py-2 rounded-full hover:bg-teal-50 font-medium transition">Login</a>
+                    <a href="#" class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 font-medium shadow-sm transition">Join Forum</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-gray-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                <a href="events.html" class="text-teal-700 font-bold">Events</a>
+                <a href="index.html#team" class="text-gray-600 hover:text-teal-600 font-medium">Our Team</a>
+                <div class="flex space-x-3 pt-2">
+                    <a href="#" class="flex-1 text-center text-teal-700 border border-teal-700 px-4 py-2 rounded-full font-medium">Login</a>
+                    <a href="#" class="flex-1 text-center bg-orange-500 text-white px-4 py-2 rounded-full font-medium">Join Forum</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER / BREADCRUMB ===== -->
+    <header class="pt-28 pb-8 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex items-center text-sm text-gray-500 mb-4">
+                <a href="index.html" class="hover:text-teal-600 transition">Home</a>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mx-2 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                <a href="events.html" class="hover:text-teal-600 transition">Events</a>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mx-2 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                <span class="text-gray-700 font-medium truncate">SEND Café Monthly Drop-in</span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+
+                <!-- Left Column: Event Details -->
+                <div class="lg:col-span-2 space-y-8">
+                    
+                    <!-- Event Image -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-sm h-72 md:h-96">
+                        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1200&auto=format&fit=crop" alt="SEND Cafe Drop-in" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-white rounded-xl p-2 shadow-md text-center w-16">
+                            <span class="block text-orange-600 font-bold text-sm leading-none uppercase">Nov</span>
+                            <span class="block text-gray-900 font-bold text-2xl leading-none mt-1">15</span>
+                        </div>
+                        <span class="absolute bottom-4 right-4 bg-teal-600 text-white text-xs px-3 py-1 rounded-full font-medium uppercase tracking-wide">Drop-in</span>
+                    </div>
+
+                    <!-- Title & Quick Info -->
+                    <div>
+                        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">SEND Café Monthly Drop-in</h1>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 font-medium">
+                            <p class="flex items-center bg-white border border-gray-100 px-3 py-1.5 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> 
+                                10:00 AM - 12:00 PM
+                            </p>
+                            <p class="flex items-center bg-white border border-gray-100 px-3 py-1.5 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg> 
+                                The Curve, Slough Library
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- About this Event -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8">
+                        <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                            <span class="w-8 h-1 bg-teal-500 rounded-full mr-3"></span>
+                            About this Event
+                        </h2>
+                        <div class="prose max-w-none text-gray-600 space-y-4 text-sm md:text-base leading-relaxed">
+                            <p>Grab a coffee and chat with other parent carers in a relaxed, understanding environment. No agenda, just peer support. Being a parent carer can be isolating, and sometimes you just need to talk to someone who "gets it".</p>
+                            <p>Our monthly café is open to all parent carers of children and young people with Special Educational Needs and Disabilities (SEND) in Slough. Whether your child has a diagnosis, is on a waiting list, or you simply have concerns about their development, you are welcome here.</p>
+                            <p>Our friendly staff and volunteers will be on hand to answer questions, signpost to local services, or simply top up your teacup. We occasionally invite local professionals to drop in informally, so you can ask questions in a low-pressure setting.</p>
+                        </div>
+                    </div>
+
+                    <!-- Agenda -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8">
+                        <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                            <span class="w-8 h-1 bg-teal-500 rounded-full mr-3"></span>
+                            What to Expect
+                        </h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center font-bold mr-4">1</div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 text-sm">Arrival & Settling In</h3>
+                                    <p class="text-gray-500 text-sm mt-1">Tea, coffee, and biscuits available. Find a seat and introduce yourself.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center font-bold mr-4">2</div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 text-sm">Open Chat & Support</h3>
+                                    <p class="text-gray-500 text-sm mt-1">Informal discussions. Share your experiences or just listen to others.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center font-bold mr-4">3</div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 text-sm">Guest Speaker (Occasional)</h3>
+                                    <p class="text-gray-500 text-sm mt-1">Sometimes we have a local professional drop in for 15 mins to share updates.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Map Placeholder -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                        <div class="p-6 md:p-8 border-b border-gray-100">
+                            <h2 class="text-xl font-bold text-gray-900 flex items-center">
+                                <span class="w-8 h-1 bg-teal-500 rounded-full mr-3"></span>
+                                Venue Location
+                            </h2>
+                        </div>
+                        <div class="bg-gray-200 h-64 w-full flex items-center justify-center">
+                            <!-- Replace with actual map embed (e.g. Google Maps iframe) later -->
+                            <div class="text-center text-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+                                <p class="font-medium text-sm">Map of The Curve, Slough Library</p>
+                                <p class="text-xs mt-1">William Street, Slough, SL1 1XY</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Registration Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24 space-y-6">
+                        
+                        <!-- Register Card -->
+                        <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-1">Register to Attend</h3>
+                            <p class="text-sm text-gray-500 mb-6">Free to attend for all parent carers.</p>
+                            
+                            <a href="#" class="block w-full bg-teal-600 text-white text-center font-medium py-3.5 rounded-lg hover:bg-teal-700 transition mb-3">
+                                Reserve My Spot
+                            </a>
+                            <a href="#" class="block w-full bg-white border border-gray-200 text-gray-700 text-center font-medium py-3.5 rounded-lg hover:bg-gray-50 transition">
+                                Add to Calendar
+                            </a>
+
+                            <!-- Quick Details List -->
+                            <div class="mt-8 pt-6 border-t border-gray-100 space-y-4 text-sm">
+                                <div class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 mr-3 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Date & Time</p>
+                                        <p class="text-gray-500">November 15, 2023</p>
+                                        <p class="text-gray-500">10:00 AM - 12:00 PM GMT</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 mr-3 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Location</p>
+                                        <p class="text-gray-500">The Curve, Slough Library</p>
+                                        <p class="text-gray-500">William Street, SL1 1XY</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 mr-3 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Who Can Attend</p>
+                                        <p class="text-gray-500">Parent carers of children with SEND (0-25 years)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Share Card -->
+                        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+                            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Share this event</h3>
+                            <div class="flex space-x-3">
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 border border-gray-100 text-gray-500 hover:bg-teal-50 hover:text-teal-600 hover:border-teal-100 transition">
+                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                                </a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 border border-gray-100 text-gray-500 hover:bg-teal-50 hover:text-teal-600 hover:border-teal-100 transition">
+                                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                                </a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 border border-gray-100 text-gray-500 hover:bg-teal-50 hover:text-teal-600 hover:border-teal-100 transition">
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" /></svg>
+                                </a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 border border-gray-100 text-gray-500 hover:bg-teal-50 hover:text-teal-600 hover:border-teal-100 transition">
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA & FOOTER ===== -->
+    <footer class="bg-gray-900 text-gray-300 pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                        <span class="font-bold text-white text-lg">Slough SEND PCF</span>
+                    </a>
+                    <p class="text-sm text-gray-400">Supporting families. Empowering voices. Creating positive change together. Every voice matters.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Emergency Contacts</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-red-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" fill-rule="evenodd"/></svg> NHS 111 - Non-emergency</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-blue-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" clip-rule="evenodd" fill-rule="evenodd"/></svg> 999 - Emergency Services</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-green-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" fill-rule="evenodd"/><path d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" fill-rule="evenodd"/></svg> Childline - 0800 1111</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Get Involved</h4>
+                    <p class="text-sm text-gray-400 mb-4">Become a member today and join our private community.</p>
+                    <a href="#" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-600 transition">Request Access</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2023 Slough SEND Parent Carer Forum. Funded by the Department for Education. Independent of the council and NHS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar shadow on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>

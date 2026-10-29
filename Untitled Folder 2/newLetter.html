@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to Newsletter · Slough SEND Parent Carer Forum</title>
+    <meta name="description" content="Occasionally we send a short email with what’s on locally for Slough SEND families, relevant discussions and news, and the next meet-up. Unsubscribe at any time.">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #2c7a7b 0%, #4fd1c5 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-teal-700 text-lg leading-none">Slough SEND</span>
+                        <span class="text-xs text-gray-500 leading-none mt-1">Parent Carer Forum</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-teal-600 font-medium transition">About Us</a>
+                    <a href="events.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Events</a>
+                    <a href="support.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Support</a>
+                    <a href="#" class="text-teal-700 border border-teal-700 px-5 py-2 rounded-full hover:bg-teal-50 font-medium transition">Login</a>
+                    <a href="#" class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 font-medium shadow-sm transition">Join Forum</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-gray-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                <a href="events.html" class="text-gray-600 hover:text-teal-600 font-medium">Events</a>
+                <a href="support.html" class="text-gray-600 hover:text-teal-600 font-medium">Support</a>
+                <div class="flex space-x-3 pt-2">
+                    <a href="#" class="flex-1 text-center text-teal-700 border border-teal-700 px-4 py-2 rounded-full font-medium">Login</a>
+                    <a href="#" class="flex-1 text-center bg-orange-500 text-white px-4 py-2 rounded-full font-medium">Join Forum</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <header class="pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-bg z-0"></div>
+        <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1597149959306-d05dbb1b8b30?q=80&w=2070&auto=format&fit=crop');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-medium mb-4">Stay In The Loop</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">Subscribe to Newsletter</h1>
+            <p class="text-lg text-teal-50 max-w-2xl mx-auto">Occasionally we send a short email with what’s on locally for Slough SEND families, relevant discussions and news, and the next meet-up. Unsubscribe at any time.</p>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid lg:grid-cols-5 gap-12 items-start mb-20">
+                
+                <!-- Left Column: Sign Up Form -->
+                <div class="lg:col-span-3">
+                    <div class="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-gray-100">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Join our mailing list</h2>
+                        <form id="newsletterForm" class="space-y-5" onsubmit="event.preventDefault(); document.getElementById('formSuccess').classList.remove('hidden'); this.style.display='none';">
+                            
+                            <!-- Name Input -->
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Name <span class="text-gray-400 font-normal">(optional)</span></label>
+                                <input type="text" placeholder="Jane Doe" class="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 focus:outline-none transition">
+                            </div>
+
+                            <!-- Email Input -->
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address <span class="text-red-500">*</span></label>
+                                <input type="email" required placeholder="you@example.com" class="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 focus:outline-none transition">
+                            </div>
+
+                            <!-- Privacy Checkbox -->
+                            <div class="flex items-start bg-gray-50 p-4 rounded-xl border border-gray-100">
+                                <input type="checkbox" id="privacyConsent" required class="mt-1 h-5 w-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500 cursor-pointer">
+                                <label for="privacyConsent" class="ml-3 text-sm text-gray-600">
+                                    <span class="font-semibold text-gray-800">Privacy *</span><br>
+                                    I agree to the <a href="#" class="text-teal-600 underline hover:text-teal-700">Privacy policy</a>
+                                </label>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="w-full bg-orange-500 text-white px-6 py-4 rounded-full font-bold text-lg hover:bg-orange-600 transition shadow-md flex items-center justify-center group">
+                                Subscribe Now
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                            </button>
+                        </form>
+
+                        <!-- Success Message (Hidden by default) -->
+                        <div id="formSuccess" class="hidden text-center py-8">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Thank you for subscribing!</h3>
+                            <p class="text-gray-500">Please check your inbox to confirm your email address.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Reassurances -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">What to expect</h3>
+                        <ul class="space-y-6">
+                            <li class="flex items-start">
+                                <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mr-4 shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">No Spam</h4>
+                                    <p class="text-sm text-gray-500">We only send emails that are relevant to the Slough SEND community.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mr-4 shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Unsubscribe Anytime</h4>
+                                    <p class="text-sm text-gray-500">You can opt-out with a single click whenever you want.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mr-4 shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">~ Once a month</h4>
+                                    <p class="text-sm text-gray-500">We won't flood your inbox. Expect to hear from us about once a month.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Read Previous Newsletters -->
+            <div class="mt-12">
+                <div class="flex items-center mb-10">
+                    <div class="w-2 h-10 bg-orange-500 rounded-full mr-4"></div>
+                    <h2 class="text-3xl font-bold text-gray-900">Read Previous Newsletters</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Dummy Item 1 -->
+                    <a href="#" class="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                        <div class="flex items-center text-teal-600 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                            <span class="text-sm font-semibold">October 2023</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Autumn Activities & EHCP Updates</h3>
+                        <p class="text-sm text-gray-500 flex-grow mb-4">A quick look at half-term events, changes to the EHCP review process, and an update from our last steering meeting.</p>
+                        <span class="text-teal-600 font-semibold text-sm inline-flex items-center group-hover:gap-2 transition-all">Read Newsletter <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg></span>
+                    </a>
+
+                    <!-- Dummy Item 2 -->
+                    <a href="#" class="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                        <div class="flex items-center text-teal-600 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                            <span class="text-sm font-semibold">September 2023</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Back to School & New Surveys</h3>
+                        <p class="text-sm text-gray-500 flex-grow mb-4">Preparing for the new term, key contacts for Slough SENCos, and a request for feedback on local transport services.</p>
+                        <span class="text-teal-600 font-semibold text-sm inline-flex items-center group-hover:gap-2 transition-all">Read Newsletter <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg></span>
+                    </a>
+
+                    <!-- Dummy Item 3 -->
+                    <a href="#" class="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                        <div class="flex items-center text-teal-600 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                            <span class="text-sm font-semibold">August 2023</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Summer Holiday Support</h3>
+                        <p class="text-sm text-gray-500 flex-grow mb-4">Links to summer activities, managing routine changes, and an introduction to our newest committee members.</p>
+                        <span class="text-teal-600 font-semibold text-sm inline-flex items-center group-hover:gap-2 transition-all">Read Newsletter <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg></span>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-900 text-gray-300 pt-20 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                        <span class="font-bold text-white text-lg">Slough SEND PCF</span>
+                    </a>
+                    <p class="text-sm text-gray-400">Supporting families. Empowering voices. Creating positive change together. Every voice matters.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Emergency Contacts</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-red-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" fill-rule="evenodd"/></svg> NHS 111 - Non-emergency</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-blue-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" clip-rule="evenodd" fill-rule="evenodd"/></svg> 999 - Emergency Services</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-green-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" fill-rule="evenodd"/><path d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" fill-rule="evenodd"/></svg> Childline - 0800 1111</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Get Involved</h4>
+                    <p class="text-sm text-gray-400 mb-4">Become a member today and join our private community.</p>
+                    <a href="#" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-600 transition">Request Access</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2023 Slough SEND Parent Carer Forum. Funded by the Department for Education. Independent of the council and NHS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar shadow on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>

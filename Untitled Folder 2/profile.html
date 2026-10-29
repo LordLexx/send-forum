@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile · Slough SEND Parent Carer Forum</title>
+    <meta name="description" content="View your profile and community posts.">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #2c7a7b 0%, #4fd1c5 100%); }
+        .post-card:hover .post-title { color: #2c7a7b; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ===== NAVBAR (Logged In State) ===== -->
+    <nav id="navbar" class="bg-white shadow-sm fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="feed.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-teal-700 text-lg leading-none">Slough SEND</span>
+                        <span class="text-xs text-gray-500 leading-none mt-1">Parent Carer Forum</span>
+                    </div>
+                </a>
+                
+                <!-- Search & Profile (Desktop) -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <div class="relative">
+                        <input type="text" placeholder="Search community..." class="w-64 pl-10 pr-4 py-2 rounded-full bg-gray-100 border border-transparent focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition outline-none text-sm">
+                        <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                    </div>
+                    
+                    <!-- Notification Bell -->
+                    <button class="relative text-gray-500 hover:text-teal-600 transition">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+                        <span class="absolute top-0 right-0 w-2.5 h-2.5 bg-orange-500 rounded-full border-2 border-white"></span>
+                    </button>
+
+                    <!-- User Profile Dropdown -->
+                    <div class="relative">
+                        <button id="profileBtn" class="flex items-center space-x-2">
+                            <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold border-2 border-teal-200">SJ</div>
+                            <svg class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50">
+                            <div class="px-4 py-2 border-b border-gray-100">
+                                <p class="font-semibold text-sm text-gray-900">Sarah Jones</p>
+                                <p class="text-xs text-gray-500">Member</p>
+                            </div>
+                            <a href="profile.html" class="block px-4 py-2 text-sm text-teal-700 bg-teal-50 font-medium">My Profile</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">My Drafts</a>
+                            <a href="index.html" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Profile -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <button class="relative text-gray-500">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+                        <span class="absolute top-0 right-0 w-2.5 h-2.5 bg-orange-500 rounded-full border-2 border-white"></span>
+                    </button>
+                    <a href="profile.html"><div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold border-2 border-teal-200">SJ</div></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PROFILE HEADER ===== -->
+    <header class="pt-28 pb-8 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Profile Info Container -->
+            <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                <!-- Avatar -->
+                <div class="w-32 h-32 md:w-36 md:h-36 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 text-5xl font-bold shadow-sm ring-4 ring-teal-50 shrink-0">SJ</div>
+                
+                <!-- Name & Details -->
+                <div class="flex-grow text-center md:text-left">
+                    <h1 class="text-3xl font-bold text-gray-900">Sarah Jones</h1>
+                    <p class="text-gray-500 font-medium">@SJ_Slough</p>
+                    <p class="text-sm text-gray-400 mt-2 flex items-center justify-center md:justify-start">
+                        <svg class="h-4 w-4 mr-1.5 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        Joined June 2023
+                    </p>
+                </div>
+
+                <!-- Edit Button -->
+                <div class="shrink-0">
+                    <button class="w-full md:w-auto border-2 border-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-50 transition flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                        Edit Profile
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="flex flex-wrap gap-6 md:gap-8 mt-8 pt-6 border-t border-gray-100 text-sm justify-center md:justify-start">
+                <div class="flex items-center"><span class="font-bold text-gray-900 text-lg mr-1.5">24</span> <span class="text-gray-500">Posts</span></div>
+                <div class="flex items-center"><span class="font-bold text-gray-900 text-lg mr-1.5">142</span> <span class="text-gray-500">Hugs Received</span></div>
+                <div class="flex items-center"><span class="font-bold text-gray-900 text-lg mr-1.5">38</span> <span class="text-gray-500">Replies</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN LAYOUT ===== -->
+    <div class="py-12 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- ===== LEFT SIDEBAR: About ===== -->
+                <aside class="hidden lg:block lg:col-span-3">
+                    <div class="space-y-6 sticky top-24">
+                        <!-- About Me -->
+                        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+                            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">About Sarah</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">Parent carer to a wonderful but energetic 7-year-old with Autism and sensory processing needs. Navigating the EHCP process and trying to survive on coffee!</p>
+                            
+                            <div class="space-y-3 text-sm text-gray-500 pt-4 border-t border-gray-50">
+                                <p class="flex items-center"><svg class="h-4 w-4 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg> Slough, UK</p>
+                                <p class="flex items-center"><svg class="h-4 w-4 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" /></svg> Autism & Sensory</p>
+                            </div>
+                        </div>
+
+                        <!-- Privacy Reminder -->
+                        <div class="bg-orange-50 border border-orange-100 rounded-2xl p-6">
+                            <div class="flex items-center mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                                <h3 class="font-bold text-orange-800 text-sm">Privacy Check</h3>
+                            </div>
+                            <p class="text-orange-700 text-xs leading-relaxed">Remember, this is a private community, but please avoid using your child's real name or specific school names in your posts.</p>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- ===== MAIN FEED: User's Posts ===== -->
+                <main class="lg:col-span-9">
+                    <!-- Tabs -->
+                    <div class="flex space-x-1 bg-white p-1 rounded-full border border-gray-100 shadow-sm w-fit mb-6">
+                        <button class="px-6 py-2 text-sm font-medium rounded-full bg-gray-900 text-white">My Posts</button>
+                        <button class="px-6 py-2 text-sm font-medium rounded-full text-gray-500 hover:text-gray-900">My Replies</button>
+                        <button class="px-6 py-2 text-sm font-medium rounded-full text-gray-500 hover:text-gray-900">Saved</button>
+                    </div>
+
+                    <!-- Posts List -->
+                    <div class="space-y-6">
+                        
+                        <!-- Post 1 -->
+                        <a href="#" class="post-card block bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition duration-300">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold mr-3">SJ</div>
+                                <div>
+                                    <p class="font-semibold text-gray-900 text-sm">Sarah Jones</p>
+                                    <p class="text-xs text-gray-400">posted 2 days ago</p>
+                                </div>
+                                <span class="ml-auto text-xs bg-orange-50 text-orange-700 px-3 py-1 rounded-full font-medium">🧠 Autism & ADHD</span>
+                            </div>
+                            <h2 class="post-title text-xl font-bold text-gray-900 mb-2 transition">Sensory friendly haircut recommendations?</h2>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">Taking my 6yo for a haircut has become a 2-person wrestling match. The noise of the clippers sends him into a meltdown. Does anyone know of a barber in Slough that actually understands sensory needs? Maybe somewhere that lets them sit in a car or doesn't mind if we bring ear defenders?</p>
+                            <div class="flex items-center text-sm text-gray-400 pt-4 border-t border-gray-50">
+                                <span class="flex items-center mr-6">
+                                    <svg class="h-5 w-5 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                                    8 Replies
+                                </span>
+                                <span class="flex items-center mr-6">
+                                    <svg class="h-5 w-5 mr-1.5 text-orange-400" fill="currentColor" viewBox="0 0 24 24" stroke=""><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                                    <span class="text-orange-500 font-medium">15 Hugs</span>
+                                </span>
+                                <span class="ml-auto text-gray-400 hidden md:inline">Last reply by <span class="font-medium text-gray-600">Belinda_G</span></span>
+                            </div>
+                        </a>
+
+                        <!-- Post 2 -->
+                        <a href="#" class="post-card block bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition duration-300">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold mr-3">SJ</div>
+                                <div>
+                                    <p class="font-semibold text-gray-900 text-sm">Sarah Jones</p>
+                                    <p class="text-xs text-gray-400">posted 1 week ago</p>
+                                </div>
+                                <span class="ml-auto text-xs bg-teal-50 text-teal-700 px-3 py-1 rounded-full font-medium">🛡️ EHCPs & Legal</span>
+                            </div>
+                            <h2 class="post-title text-xl font-bold text-gray-900 mb-2 transition">How long did your EHCP assessment take?</h2>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">We are on week 10 of waiting for a decision from Slough council after requesting an assessment. I know the legal limit is 20 weeks, but I'm getting so anxious seeing the postman arrive every day with no letter. How long did it take for others here?</p>
+                            <div class="flex items-center text-sm text-gray-400 pt-4 border-t border-gray-50">
+                                <span class="flex items-center mr-6">
+                                    <svg class="h-5 w-5 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                                    24 Replies
+                                </span>
+                                <span class="flex items-center mr-6">
+                                    <svg class="h-5 w-5 mr-1.5 text-orange-400" fill="currentColor" viewBox="0 0 24 24" stroke=""><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                                    <span class="text-orange-500 font-medium">42 Hugs</span>
+                                </span>
+                                <span class="ml-auto text-gray-400 hidden md:inline">Last reply by <span class="font-medium text-gray-600">Imran_A</span></span>
+                            </div>
+                        </a>
+
+                        <!-- Post 3 -->
+                        <a href="#" class="post-card block bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition duration-300">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold mr-3">SJ</div>
+                                <div>
+                                    <p class="font-semibold text-gray-900 text-sm">Sarah Jones</p>
+                                    <p class="text-xs text-gray-400">posted 3 weeks ago</p>
+                                </div>
+                                <span class="ml-auto text-xs bg-yellow-50 text-yellow-700 px-3 py-1 rounded-full font-medium">☕ Coffee Break</span>
+                            </div>
+                            <h2 class="post-title text-xl font-bold text-gray-900 mb-2 transition">Surviving the summer holidays 😅</h2>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">Just a shoutout to all the parents surviving the summer break with zero routine. We've had more meltdowns this week than I can count (and not just from the kids!). What is everyone doing to keep busy? We've done the soft play circuit to death...</p>
+                            <div class="flex items-center text-sm text-gray-400 pt-4 border-t border-gray-50">
+                                <span class="flex items-center mr-6">
+                                    <svg class="h-5 w-5 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                                    15 Replies
+                                </span>
+                                <span class="flex items-center mr-6">
+                                    <svg class="h-5 w-5 mr-1.5 text-orange-400" fill="currentColor" viewBox="0 0 24 24" stroke=""><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                                    <span class="text-orange-500 font-medium">28 Hugs</span>
+                                </span>
+                                <span class="ml-auto text-gray-400 hidden md:inline">Last reply by <span class="font-medium text-gray-600">Charlotte_C</span></span>
+                            </div>
+                        </a>
+
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Profile Dropdown Toggle
+        const profileBtn = document.getElementById('profileBtn');
+        const profileDropdown = document.getElementById('profileDropdown');
+        
+        profileBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            profileDropdown.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!profileDropdown.classList.contains('hidden')) {
+                profileDropdown.classList.add('hidden');
+            }
+        });
+
+        // Navbar shadow on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>

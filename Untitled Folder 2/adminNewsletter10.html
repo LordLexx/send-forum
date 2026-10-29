@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Newsletter · Slough SEND Parent Carer Forum</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&family=Lora:wght@400;600&family=Merriweather:wght@400;700&family=Inter:wght@400;600&family=Roboto:wght@400;500;700&family=Lato:wght@400;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #2c7a7b 0%, #4fd1c5 100%); }
+
+        /* ===== Block Editor Styles ===== */
+        .editor-block {
+            position: relative;
+            transition: all 0.2s ease;
+            border-radius: 8px;
+            padding: 8px 12px;
+            margin: 8px 0;
+            border: 1px solid transparent;
+        }
+        .editor-block:hover { background: rgba(0,0,0,0.02); border-color: #f3f4f6; }
+        .editor-block.selected {
+            background: rgba(45, 122, 123, 0.06);
+            border-color: #ccfbf1;
+            box-shadow: inset 3px 0 0 #2c7a7b;
+        }
+
+        /* Floating Controls */
+        .block-controls {
+            opacity: 0;
+            transition: opacity 0.15s ease;
+            pointer-events: none;
+        }
+        .editor-block:hover .block-controls,
+        .editor-block.selected .block-controls {
+            opacity: 100;
+            pointer-events: auto;
+        }
+
+        /* Drag & Drop States (From Provided Template) */
+        .editor-block.dragging { opacity: 0.5; transform: scale(0.98); }
+        .editor-block.drag-over-top { box-shadow: 0 -3px 0 0 #2c7a7b; border-color: transparent !important; }
+        .editor-block.drag-over-bottom { box-shadow: 0 3px 0 0 #2c7a7b; border-color: transparent !important; }
+
+        .add-block-btn {
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+        .add-block-wrapper:hover .add-block-btn,
+        .add-block-btn.visible {
+            opacity: 1;
+        }
+
+        /* Contenteditable placeholders */
+        [contenteditable="true"]:empty:before {
+            content: attr(data-placeholder);
+            color: #9ca3af;
+            pointer-events: none;
+            display: block;
+        }
+        [contenteditable="true"]:focus {
+            outline: none;
+        }
+
+        /* Slash menu */
+        .slash-menu { animation: fadeIn 0.15s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom scrollbar */
+        .custom-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+        .custom-scroll::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+        /* ===== Newsletter Preview Styles (Driven by CSS Vars) ===== */
+        .newsletter-preview {
+            font-family: var(--body-font, 'Open Sans');
+            line-height: var(--line-height, 1.6);
+            font-size: var(--base-font-size, 15px);
+            color: var(--body-text-color, #334155);
+        }
+        .newsletter-preview h1, .newsletter-preview h2, .newsletter-preview h3,
+        .newsletter-preview h4, .newsletter-preview h5, .newsletter-preview h6 {
+            font-family: var(--heading-font, 'Poppins');
+            color: var(--heading-color, #0f172a);
+            margin: 0.6em 0 0.4em;
+            font-weight: 700;
+        }
+        .newsletter-preview h1 { font-size: calc(1.75rem * var(--heading-scale, 1)); }
+        .newsletter-preview h2 { font-size: calc(1.5rem * var(--heading-scale, 1)); }
+        .newsletter-preview h3 { font-size: calc(1.25rem * var(--heading-scale, 1)); font-weight: 600; }
+        .newsletter-preview h4 { font-size: calc(1.125rem * var(--heading-scale, 1)); font-weight: 600; }
+        .newsletter-preview h5 { font-size: calc(1rem * var(--heading-scale, 1)); font-weight: 600; }
+        .newsletter-preview h6 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted-color, #475569); }
+        .newsletter-preview p { margin: 0 0 var(--block-spacing, 16px); color: var(--body-text-color, #334155); }
+        .newsletter-preview ul { list-style: disc; padding-left: 1.5em; margin: 0 0 var(--block-spacing, 16px); }
+        .newsletter-preview ol { list-style: decimal; padding-left: 1.5em; margin: 0 0 var(--block-spacing, 16px); }
+        .newsletter-preview li { margin: 0.25em 0; color: var(--body-text-color, #334155); }
+        .newsletter-preview blockquote {
+            border-left: 4px solid var(--primary-color, #2c7a7b);
+            background: var(--blockquote-bg, #f0fdfa);
+            color: var(--muted-color, #475569);
+            border-radius: 0 var(--border-radius, 10px) var(--border-radius, 10px) 0;
+            padding: 0.5em 1em; margin: 0 0 var(--block-spacing, 16px); font-style: italic;
+        }
+        .newsletter-preview img { max-width: 100%; border-radius: var(--border-radius, 10px); margin: 0 0 var(--block-spacing, 16px); display: block; }
+        .newsletter-preview hr { border: none; border-top: 1px solid var(--border-color, #e2e8f0); margin: 1.2em 0; }
+        .newsletter-preview a { color: var(--link-color, #2c7a7b); text-decoration: underline; }
+        .newsletter-preview .cta-button {
+            display: inline-block;
+            background: var(--accent-color, #f97316);
+            color: var(--text-on-primary, #ffffff);
+            padding: 10px 22px;
+            border-radius: var(--button-radius, 999px);
+            text-decoration: none !important;
+            font-weight: 600;
+            margin: 0.8em 0;
+        }
+        .newsletter-preview .embed-wrapper { margin: 0 0 var(--block-spacing, 16px); }
+        .newsletter-preview .embed-wrapper iframe { width: 100%; border-radius: var(--border-radius, 10px); min-height: 280px; border: none; }
+
+        /* Header variants */
+        .email-header-gradient { background: linear-gradient(135deg, var(--header-bg-color, #2c7a7b) 0%, var(--header-gradient-end, #4fd1c5) 100%); }
+        .email-header-solid { background: var(--header-bg-color, #2c7a7b); }
+        .email-header-minimal { background: var(--background, #ffffff); border-bottom: 2px solid var(--primary-color, #2c7a7b); }
+        .email-header-logo { background: var(--background, #ffffff); border-bottom: 1px solid var(--border-color, #e2e8f0); }
+
+        /* Footer */
+        .email-footer { background: var(--footer-bg-color, #0f172a); color: var(--footer-text-color, #94a3b8); }
+        .email-footer a { color: var(--footer-link-color, #2dd4bf); }
+
+        /* UI Elements */
+        .tab-btn { color: #64748b; }
+        .tab-btn.active { background: #2c7a7b; color: white; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Mobile preview device frame */
+        .device-mobile { max-width: 380px; margin: 0 auto; }
+        .device-desktop { max-width: 100%; }
+
+        /* Recipient chips */
+        .recipient-chip {
+            display: inline-flex;
+            align-items: center;
+            background: #f0fdfa;
+            color: #2c7a7b;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid #99f6e4;
+        }
+
+        /* Preset Swatches */
+        .preset-swatch {
+            width: 36px; height: 36px; border-radius: 8px; border: 2px solid #fff;
+            box-shadow: 0 0 0 1px #e2e8f0; cursor: pointer; transition: transform 0.1s;
+        }
+        .preset-swatch:hover { transform: scale(1.1); }
+        .color-field input[type="color"] { cursor: pointer; }
+
+        /* Preview Block Selection */
+        .preview-block-item { transition: outline 0.1s ease; }
+        .preview-block-selected { outline: 2px solid #2c7a7b; outline-offset: 4px; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="flex min-h-screen">
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="flex-grow w-full">
+
+            <!-- Top Bar -->
+            <header class="bg-white border-b border-gray-100 h-20 flex items-center justify-between px-4 sm:px-6 sticky top-0 z-30">
+                <div class="flex items-center space-x-3">
+                    <a href="admin-newsletters.html" class="text-gray-500 hover:text-teal-600 transition">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    </a>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                        <div>
+                            <h1 class="text-base sm:text-xl font-bold text-gray-900">Create Newsletter</h1>
+                            <p class="text-xs sm:text-sm text-gray-500 hidden sm:block">Compose, preview and send to your community</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span id="saveStatus" class="hidden sm:inline-flex items-center text-xs text-gray-500">
+                        <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
+                        <span id="saveStatusText">Saved as draft</span>
+                    </span>
+                    <button onclick="saveDraft()" class="hidden sm:inline-flex items-center px-4 py-2 border border-gray-200 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" /></svg>
+                        Save Draft
+                    </button>
+                    <button onclick="openSendModal()" class="inline-flex items-center px-4 py-2 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition shadow-sm">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
+                        Send
+                    </button>
+                    <div class="flex items-center space-x-2 pl-2 border-l border-gray-200">
+                        <div class="w-9 h-9 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-bold border-2 border-orange-200">IA</div>
+                        <div class="hidden sm:block">
+                            <p class="font-semibold text-sm text-gray-900">Imran Anwar</p>
+                            <p class="text-xs text-gray-500">Chair / Admin</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Newsletter Editor Content -->
+            <div class="p-4 sm:p-6">
+
+                <!-- Mode Toggle: Write / Style -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-2 mb-6 inline-flex">
+                    <button onclick="setMode('write')" id="mode-write" class="px-6 py-2 rounded-lg text-sm font-semibold bg-teal-600 text-white inline-flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                        Write
+                    </button>
+                    <button onclick="setMode('style')" id="mode-style" class="px-6 py-2 rounded-lg text-sm font-semibold text-gray-500 hover:bg-gray-50 inline-flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
+                        Style
+                    </button>
+                </div>
+
+                <!-- Newsletter Meta Form -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                        <div class="lg:col-span-2">
+                            <label for="newsletterTitle" class="block text-sm font-medium text-gray-700 mb-1">Newsletter Title <span class="text-red-500">*</span></label>
+                            <input type="text" id="newsletterTitle" placeholder="e.g. October Update — SEND News & Resources" oninput="updatePreview()" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition outline-none text-sm">
+                        </div>
+                        <div>
+                            <label for="emailSubject" class="block text-sm font-medium text-gray-700 mb-1">Email Subject Line <span class="text-red-500">*</span></label>
+                            <input type="text" id="emailSubject" placeholder="Slough SEND PCF — October Update" oninput="updatePreview()" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition outline-none text-sm">
+                            <p class="text-xs text-gray-400 mt-1">This appears in the recipient's inbox.</p>
+                        </div>
+                        <div>
+                            <label for="previewText" class="block text-sm font-medium text-gray-700 mb-1">Preview Text</label>
+                            <input type="text" id="previewText" placeholder="Latest news, events and resources from the forum..." oninput="updatePreview()" maxlength="140" class="w-full px-4 py-2.5 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition outline-none text-sm">
+                            <p class="text-xs text-gray-400 mt-1"><span id="previewCount">0</span>/140 — Shows next to the subject line in most inboxes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Two-column layout: Editor + Preview -->
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+
+                    <!-- ===== LEFT COLUMN (Swappable Panes) ===== -->
+                    <div class="lg:col-span-3 space-y-4">
+
+                        <!-- WRITE PANEL -->
+                        <div id="writePanel">
+                            <!-- Editor header bar -->
+                            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex items-center justify-between flex-wrap gap-3 mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+                                    <h2 class="font-bold text-gray-900">Block Editor</h2>
+                                    <span id="blockCount" class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full font-semibold">0 blocks</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="addBlock('paragraph')" class="inline-flex items-center text-xs px-3 py-1.5 bg-teal-600 text-white rounded-lg font-medium hover:bg-teal-700 transition">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+                                        Add Block
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Editor Canvas -->
+                            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6">
+                                <div id="blockEditor" class="space-y-3 min-h-[400px]"></div>
+
+                                <!-- Bottom add block button -->
+                                <div class="add-block-wrapper relative mt-6 pt-4 border-t border-gray-100">
+                                    <button onclick="openSlashMenu(this)" class="add-block-btn w-full flex items-center justify-center gap-2 py-3 border-2 border-dashed border-gray-200 rounded-xl text-gray-400 hover:border-teal-400 hover:text-teal-600 transition">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+                                        <span class="text-sm font-medium">Add a block</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Editor help -->
+                            <div class="bg-teal-50 border border-teal-100 rounded-xl p-4 flex items-start space-x-3 mt-4">
+                                <svg class="h-5 w-5 text-teal-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <div class="text-sm text-teal-900">
+                                    <p class="font-semibold mb-1">Tips for great newsletters</p>
+                                    <ul class="space-y-1 text-teal-800 text-xs list-disc pl-4">
+                                        <li>Press <kbd class="px-1 bg-white border border-teal-200 rounded text-[10px]">/</kbd> in an empty block to quickly insert content.</li>
+                                        <li>Hover over any block and use the floating toolbar to drag, duplicate or delete it.</li>
+                                        <li>Highlight text inside a block to reveal the formatting toolbar (Bold, Italic, Link).</li>
+                                        <li>Use headings to break up long content — accessibility matters!</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STYLE PANEL -->
+                        <div id="stylePanel" class="hidden">
+                            <!-- Style panel header -->
+                            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
+                                    <h2 class="font-bold text-gray-900">Newsletter Style</h2>
+                                </div>
+                                <button onclick="resetStyle()" class="text-xs text-gray-500 hover:text-red-500">Reset to default</button>
+                            </div>
+
+                            <!-- Per-Block Style Panel (Dynamic) -->
+                            <div id="blockStylePanel" class="hidden bg-teal-50 border border-teal-200 rounded-2xl shadow-sm p-5 mb-4">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="font-bold text-teal-900 text-sm">Selected Block Style</h3>
+                                    <button onclick="clearPreviewBlockSelection()" class="text-xs text-teal-700 hover:text-teal-900">Clear selection</button>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <label class="color-field">
+                                            <span class="block text-xs font-medium text-teal-800 mb-1">Block BG</span>
+                                            <input type="color" id="blockBgColor" value="#ffffff" oninput="updatePreviewBlockStyle()" class="w-full h-9 rounded border border-teal-200">
+                                        </label>
+                                        <div>
+                                            <label class="block text-xs font-medium text-teal-800 mb-1">Text Align</label>
+                                            <select id="blockAlign" onchange="updatePreviewBlockStyle()" class="w-full px-3 py-2 rounded-lg bg-white border border-teal-200 text-sm">
+                                                <option value="left">Left</option>
+                                                <option value="center">Center</option>
+                                                <option value="right">Right</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <label class="color-field">
+                                            <span class="block text-xs font-medium text-teal-800 mb-1">Text Color</span>
+                                            <input type="color" id="blockTextColor" value="#334155" oninput="updatePreviewBlockStyle()" class="w-full h-9 rounded border border-teal-200">
+                                        </label>
+                                        <div>
+                                            <label class="block text-xs font-medium text-teal-800 mb-1">Text Font</label>
+                                            <select id="blockFont" onchange="updatePreviewBlockStyle()" class="w-full px-3 py-2 rounded-lg bg-white border border-teal-200 text-sm">
+                                                <option value="inherit">Inherit Global</option>
+                                                <option value="Poppins">Poppins</option>
+                                                <option value="Open Sans">Open Sans</option>
+                                                <option value="Inter">Inter</option>
+                                                <option value="Lora">Lora</option>
+                                                <option value="Montserrat">Montserrat</option>
+                                                <option value="Playfair Display">Playfair Display</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-teal-800 mb-1">Padding — <span id="blockPaddingLabel">0</span>px</label>
+                                        <input type="range" min="0" max="40" value="0" id="blockPadding" oninput="updatePreviewBlockStyle()" class="w-full accent-teal-600">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- COLORS -->
+                            <details class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mb-4" open>
+                                <summary class="cursor-pointer font-bold text-gray-900 text-sm flex items-center justify-between">
+                                    <span>🎨 Colors</span>
+                                    <span class="text-xs text-gray-400 font-normal">Click to expand</span>
+                                </summary>
+                                <div class="grid grid-cols-2 gap-4 mt-4">
+                                    <label class="color-field">
+                                        <span class="block text-xs font-medium text-gray-600 mb-1">Primary</span>
+                                        <input type="color" data-style-key="primaryColor" value="#2c7a7b" class="w-full h-9 rounded border border-gray-200">
+                                    </label>
+                                    <label class="color-field">
+                                        <span class="block text-xs font-medium text-gray-600 mb-1">Accent / Button</span>
+                                        <input type="color" data-style-key="accentColor" value="#f97316" class="w-full h-9 rounded border border-gray-200">
+                                    </label>
+                                    <label class="color-field">
+                                        <span class="block text-xs font-medium text-gray-600 mb-1">Links</span>
+                                        <input type="color" data-style-key="linkColor" value="#2c7a7b" class="w-full h-9 rounded border border-gray-200">
+                                    </label>
+                                    <label class="color-field">
+                                        <span class="block text-xs font-medium text-gray-600 mb-1">Body Text</span>
+                                        <input type="color" data-style-key="bodyTextColor" value="#334155" class="w-full h-9 rounded border border-gray-200">
+                                    </label>
+                                    <label class="color-field">
+                                        <span class="block text-xs font-medium text-gray-600 mb-1">Headings</span>
+                                        <input type="color" data-style-key="headingColor" value="#0f172a" class="w-full h-9 rounded border border-gray-200">
+                                    </label>
+                                    <label class="color-field">
+                                        <span class="block text-xs font-medium text-gray-600 mb-1">Borders</span>
+                                        <input type="color" data-style-key="borderColor" value="#e2e8f0" class="w-full h-9 rounded border border-gray-200">
+                                    </label>
+                                </div>
+
+                                <!-- Theme presets & Custom Theme -->
+                                <div class="mt-4 pt-4 border-t border-gray-100">
+                                    <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Theme Presets</p>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <button onclick="applyPreset('teal')" class="preset-swatch" style="background:linear-gradient(135deg,#2c7a7b,#4fd1c5)"></button>
+                                        <button onclick="applyPreset('purple')" class="preset-swatch" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)"></button>
+                                        <button onclick="applyPreset('blue')" class="preset-swatch" style="background:linear-gradient(135deg,#1d4ed8,#60a5fa)"></button>
+                                        <button onclick="applyPreset('rose')" class="preset-swatch" style="background:linear-gradient(135deg,#be123c,#fb7185)"></button>
+                                        <button onclick="applyPreset('forest')" class="preset-swatch" style="background:linear-gradient(135deg,#166534,#86efac)"></button>
+                                        <button onclick="applyPreset('slate')" class="preset-swatch" style="background:linear-gradient(135deg,#334155,#94a3b8)"></button>
+                                    </div>
+                                    <div class="flex items-end space-x-2">
+                                        <label class="color-field flex-1">
+                                            <span class="block text-xs font-medium text-gray-600 mb-1">Custom Theme Color</span>
+                                            <input type="color" id="customThemeColor" value="#2c7a7b" class="w-full h-9 rounded border border-gray-200">
+                                        </label>
+                                        <button onclick="applyCustomTheme()" class="px-4 py-2 bg-teal-600 text-white text-xs rounded-lg hover:bg-teal-700 h-9">Apply Color</button>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <!-- TYPOGRAPHY -->
+                            <details class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mb-4" open>
+                                <summary class="cursor-pointer font-bold text-gray-900 text-sm">🔤 Typography</summary>
+                                <div class="space-y-4 mt-4">
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Heading Font</label>
+                                        <select data-style-key="headingFont" class="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 text-sm">
+                                            <option value="Poppins">Poppins</option>
+                                            <option value="Playfair Display">Playfair Display</option>
+                                            <option value="Montserrat">Montserrat</option>
+                                            <option value="Lora">Lora</option>
+                                            <option value="Merriweather">Merriweather</option>
+                                            <option value="Inter">Inter</option>
+                                            <option value="Georgia">Georgia (system)</option>
+                                            <option value="Arial">Arial (system)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Body Font</label>
+                                        <select data-style-key="bodyFont" class="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 text-sm">
+                                            <option value="Open Sans">Open Sans</option>
+                                            <option value="Inter">Inter</option>
+                                            <option value="Roboto">Roboto</option>
+                                            <option value="Lato">Lato</option>
+                                            <option value="Nunito Sans">Nunito Sans</option>
+                                            <option value="Helvetica">Helvetica (system)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Base Font Size — <span id="fontSizeLabel">15</span>px</label>
+                                        <input type="range" min="12" max="20" value="15" data-style-key="baseFontSize" class="w-full accent-teal-600">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Heading Scale — <span id="headingScaleLabel">1.0</span>x</label>
+                                        <input type="range" min="0.8" max="1.4" step="0.05" value="1.0" data-style-key="headingScale" class="w-full accent-teal-600">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Line Height — <span id="lineHeightLabel">1.6</span></label>
+                                        <input type="range" min="1.2" max="2.0" step="0.1" value="1.6" data-style-key="lineHeight" class="w-full accent-teal-600">
+                                    </div>
+                                </div>
+                            </details>
+
+                            <!-- SPACING & LAYOUT -->
+                            <details class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mb-4">
+                                <summary class="cursor-pointer font-bold text-gray-900 text-sm">📐 Spacing & Layout</summary>
+                                <div class="space-y-4 mt-4">
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Content Width — <span id="widthLabel">600</span>px</label>
+                                        <input type="range" min="500" max="700" value="600" data-style-key="contentWidth" class="w-full accent-teal-600">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Content Padding — <span id="paddingLabel">32</span>px</label>
+                                        <input type="range" min="16" max="60" value="32" data-style-key="contentPadding" class="w-full accent-teal-600">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Block Spacing — <span id="blockSpacingLabel">16</span>px</label>
+                                        <input type="range" min="8" max="40" value="16" data-style-key="blockSpacing" class="w-full accent-teal-600">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Corner Radius — <span id="radiusLabel">10</span>px</label>
+                                        <input type="range" min="0" max="24" value="10" data-style-key="borderRadius" class="w-full accent-teal-600">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-600 mb-2">Button Shape</label>
+                                        <div class="grid grid-cols-3 gap-2">
+                                            <label class="cursor-pointer">
+                                                <input type="radio" name="buttonRadius" value="999" data-style-key="buttonRadius" class="sr-only peer" checked>
+                                                <div class="py-2 border-2 border-gray-200 rounded-lg peer-checked:border-teal-500 text-center text-xs font-medium text-gray-700">Pill</div>
+                                            </label>
+                                            <label class="cursor-pointer">
+                                                <input type="radio" name="buttonRadius" value="8" data-style-key="buttonRadius" class="sr-only peer">
+                                                <div class="py-2 border-2 border-gray-200 rounded-lg peer-checked:border-teal-500 text-center text-xs font-medium text-gray-700">Rounded</div>
+                                            </label>
+                                            <label class="cursor-pointer">
+                                                <input type="radio" name="buttonRadius" value="0" data-style-key="buttonRadius" class="sr-only peer">
+                                                <div class="py-2 border-2 border-gray-200 rounded-lg peer-checked:border-teal-500 text-center text-xs font-medium text-gray-700">Square</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <!-- HEADER -->
+                            <details class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mb-4">
+                                <summary class="cursor-pointer font-bold text-gray-900 text-sm">📧 Email Header</summary>
+                                <div class="space-y-4 mt-4">
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-600 mb-2">Header Style</label>
+                                        <div class="grid grid-cols-4 gap-2">
+                                            <label class="cursor-pointer">
+                                                <input type="radio" name="headerStyle" value="gradient" data-style-key="headerStyle" class="sr-only peer" checked>
+                                                <div class="py-2 border-2 border-gray-200 rounded-lg peer-checked:border-teal-500 text-center text-[10px] font-medium text-gray-700">Gradient</div>
+                                            </label>
+                                            <label class="cursor-pointer">
+                                                <input type="radio" name="headerStyle" value="solid" data-style-key="headerStyle" class="sr-only peer">
+                                                <div class="py-2 border-2 border-gray-200 rounded-lg peer-checked:border-teal-500 text-center text-[10px] font-medium text-gray-700">Solid</div>
+                                            </label>
+                                            <label class="cursor-pointer">
+                                                <input type="radio" name="headerStyle" value="minimal" data-style-key="headerStyle" class="sr-only peer">
+                                                <div class="py-2 border-2 border-gray-200 rounded-lg peer-checked:border-teal-500 text-center text-[10px] font-medium text-gray-700">Minimal</div>
+                                            </label>
+                                            <label class="cursor-pointer">
+                                                <input type="radio" name="headerStyle" value="logo" data-style-key="headerStyle" class="sr-only peer">
+                                                <div class="py-2 border-2 border-gray-200 rounded-lg peer-checked:border-teal-500 text-center text-[10px] font-medium text-gray-700">Logo</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <label>
+                                            <span class="block text-xs font-medium text-gray-600 mb-1">Header Text</span>
+                                            <input type="text" data-style-key="headerText" value="Slough SEND Parent Carer Forum" class="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 text-sm">
+                                        </label>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <label class="color-field">
+                                            <span class="block text-xs font-medium text-gray-600 mb-1">Header BG</span>
+                                            <input type="color" data-style-key="headerBgColor" value="#2c7a7b" class="w-full h-9 rounded border border-gray-200">
+                                        </label>
+                                        <label class="color-field">
+                                            <span class="block text-xs font-medium text-gray-600 mb-1">Gradient End</span>
+                                            <input type="color" data-style-key="headerGradientEnd" value="#4fd1c5" class="w-full h-9 rounded border border-gray-200">
+                                        </label>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <!-- FOOTER -->
+                            <details class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mb-4">
+                                <summary class="cursor-pointer font-bold text-gray-900 text-sm">🔚 Email Footer</summary>
+                                <div class="space-y-4 mt-4">
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Organization Name</label>
+                                        <input type="text" data-style-key="footerOrgName" value="Slough SEND Parent Carer Forum" class="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Footer Message</label>
+                                        <textarea data-style-key="footerText" rows="2" class="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 text-sm">You're receiving this because you're a member of our forum.</textarea>
+                                    </div>
+                                    <div class="grid grid-cols-3 gap-4">
+                                        <label class="color-field">
+                                            <span class="block text-xs font-medium text-gray-600 mb-1">BG Color</span>
+                                            <input type="color" data-style-key="footerBgColor" value="#0f172a" class="w-full h-9 rounded border border-gray-200">
+                                        </label>
+                                        <label class="color-field">
+                                            <span class="block text-xs font-medium text-gray-600 mb-1">Text Color</span>
+                                            <input type="color" data-style-key="footerTextColor" value="#94a3b8" class="w-full h-9 rounded border border-gray-200">
+                                        </label>
+                                        <label class="color-field">
+                                            <span class="block text-xs font-medium text-gray-600 mb-1">Link Color</span>
+                                            <input type="color" data-style-key="footerLinkColor" value="#2dd4bf" class="w-full h-9 rounded border border-gray-200">
+                                        </label>
+                                    </div>
+                                    <label class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer">
+                                        <span class="text-sm text-gray-700">Show unsubscribe link</span>
+                                        <input type="checkbox" data-style-key="showUnsubscribe" checked class="accent-teal-600 w-4 h-4">
+                                    </label>
+                                </div>
+                            </details>
+
+                        </div>
+                    </div>
+
+                    <!-- ===== RIGHT COLUMN (Sticky Shared Preview & Settings) ===== -->
+                    <div class="lg:col-span-2 space-y-4 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto custom-scroll pb-4">
+                        <!-- Tabs -->
+                        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-2 flex items-center space-x-1">
+                            <button onclick="switchTab('preview')" id="tab-preview" class="tab-btn active flex-1 py-2 rounded-lg text-sm font-medium transition">Preview</button>
+                            <button onclick="switchTab('recipients')" id="tab-recipients" class="tab-btn flex-1 py-2 rounded-lg text-sm font-medium transition">Recipients</button>
+                            <button onclick="switchTab('settings')" id="tab-settings" class="tab-btn flex-1 py-2 rounded-lg text-sm font-medium transition">Settings</button>
+                        </div>
+
+                        <!-- Preview Tab -->
+                        <div id="pane-preview" class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="font-bold text-gray-900 text-sm">Live Preview</h3>
+                                <div class="flex bg-gray-100 rounded-lg p-0.5">
+                                    <button onclick="setPreviewDevice('desktop')" id="deviceDesktop" class="p-1.5 rounded text-gray-500 hover:text-gray-700 transition">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                    </button>
+                                    <button onclick="setPreviewDevice('mobile')" id="deviceMobile" class="p-1.5 rounded text-gray-500 hover:text-gray-700 transition">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 max-h-[600px] overflow-y-auto custom-scroll">
+                                <div id="previewWrapper" class="device-desktop bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+                                    <div class="email-header email-header-gradient p-5 text-white text-center">
+                                        <!-- JS populates -->
+                                    </div>
+                                    <div class="email-content mx-auto" style="max-width:600px;">
+                                        <div class="p-5">
+                                            <h1 id="previewTitle" class="text-xl font-bold text-gray-900 mb-2" style="font-family: 'Poppins', sans-serif;">Your newsletter title</h1>
+                                            <p id="previewDate" class="text-xs text-gray-400 mb-4"></p>
+                                            <div id="previewContent" class="newsletter-preview text-sm">
+                                                <p class="text-gray-400 italic">Start adding blocks to see your newsletter come to life...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="email-footer p-5 text-center text-xs">
+                                        <!-- JS populates -->
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-3 text-center">Preview updates as you type.</p>
+                        </div>
+
+                        <!-- Recipients Tab -->
+                        <div id="pane-recipients" class="hidden bg-white rounded-2xl shadow-sm border border-gray-100 p-5 space-y-4">
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-sm mb-1">Choose recipients</h3>
+                                <p class="text-xs text-gray-500">Select who should receive this newsletter.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="flex items-start p-3 border-2 border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                    <input type="radio" name="recipientGroup" value="all" checked class="mt-1 mr-3 accent-teal-600">
+                                    <div>
+                                        <p class="font-semibold text-sm text-gray-900">All Members</p>
+                                        <p class="text-xs text-gray-500">Send to every verified member (247 recipients)</p>
+                                    </div>
+                                </label>
+                                <label class="flex items-start p-3 border-2 border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                    <input type="radio" name="recipientGroup" value="active" class="mt-1 mr-3 accent-teal-600">
+                                    <div>
+                                        <p class="font-semibold text-sm text-gray-900">Public</p>
+                                        <p class="text-xs text-gray-500">Everyone who can see this will see this</p>
+                                    </div>
+                                </label>
+                                <label class="flex items-start p-3 border-2 border-gray-200 rounded-xl cursor-pointer hover:bg-gray-50 transition has-[:checked]:border-teal-500 has-[:checked]:bg-teal-50">
+                                    <input type="radio" name="recipientGroup" value="admins" class="mt-1 mr-3 accent-teal-600">
+                                    <div>
+                                        <p class="font-semibold text-sm text-gray-900">Admins & Moderators</p>
+                                        <p class="text-xs text-gray-500">Internal test send (5 recipients)</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="bg-orange-50 border border-orange-100 rounded-xl p-3 flex items-start space-x-2">
+                                <svg class="h-5 w-5 text-orange-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                                <p class="text-xs text-orange-800">Always send a test email to yourself first. Once sent, newsletters cannot be recalled.</p>
+                            </div>
+                        </div>
+
+                        <!-- Settings Tab -->
+                        <div id="pane-settings" class="hidden bg-white rounded-2xl shadow-sm border border-gray-100 p-5 space-y-4">
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-sm mb-1">Newsletter settings</h3>
+                                <p class="text-xs text-gray-500">Configure delivery & tracking options.</p>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Sender Name</label>
+                                    <input type="text" value="Slough SEND PCF" class="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition outline-none text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Reply-To Email</label>
+                                    <input type="email" value="hello@sloughsend.org.uk" class="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition outline-none text-sm">
+                                </div>
+                                <div class="space-y-2 pt-2">
+                                    <label class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer">
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-900">Track opens</p>
+                                            <p class="text-xs text-gray-500">See how many recipients open this email</p>
+                                        </div>
+                                        <input type="checkbox" checked class="accent-teal-600 w-4 h-4">
+                                    </label>
+                                    <label class="flex items-center justify-between p-3 bg-gray-50 rounded-lg cursor-pointer">
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-900">Track link clicks</p>
+                                            <p class="text-xs text-gray-500">Monitor which links get clicked</p>
+                                        </div>
+                                        <input type="checkbox" checked class="accent-teal-600 w-4 h-4">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== FLOATING TEXT TOOLBAR ===== -->
+    <div id="floatingToolbar" class="hidden fixed z-[60] bg-gray-900 text-white rounded-lg shadow-xl flex items-center p-1 space-x-0.5">
+        <button onclick="formatText('bold')" class="p-2 hover:bg-gray-700 rounded font-bold text-xs" title="Bold">B</button>
+        <button onclick="formatText('italic')" class="p-2 hover:bg-gray-700 rounded italic text-xs" title="Italic">I</button>
+        <button onclick="formatText('underline')" class="p-2 hover:bg-gray-700 rounded underline text-xs" title="Underline">U</button>
+        <div class="w-px h-4 bg-gray-600 mx-1"></div>
+        <button onclick="openLinkPopover()" class="p-2 hover:bg-gray-700 rounded" title="Add Link">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+        </button>
+    </div>
+
+    <!-- ===== LINK INPUT POPOVER ===== -->
+    <div id="linkPopover" class="hidden fixed z-[60] bg-white rounded-lg shadow-xl border border-gray-200 p-2 flex items-center space-x-2">
+        <input type="url" id="linkUrlInput" placeholder="https://example.com" class="text-sm px-2 py-1 border border-gray-200 rounded focus:outline-none focus:ring-1 focus:ring-teal-500">
+        <button onclick="applyLink()" class="bg-teal-600 text-white text-xs px-3 py-1 rounded font-medium hover:bg-teal-700">Apply</button>
+    </div>
+
+    <!-- ===== SLASH MENU POPOVER ===== -->
+    <div id="slashMenu" class="hidden fixed z-50 slash-menu">
+        <div class="bg-white rounded-xl shadow-2xl border border-gray-100 w-72 max-h-96 overflow-y-auto custom-scroll">
+            <div class="p-2">
+                <input type="text" id="slashSearch" placeholder="Search blocks..." oninput="filterSlashMenu()" class="w-full px-3 py-2 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none">
+            </div>
+            <div id="slashMenuItems" class="p-2 pt-0"></div>
+        </div>
+    </div>
+
+    <!-- ===== IMAGE URL MODAL ===== -->
+    <div id="imageModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-bold text-lg text-gray-900">Add Image</h3>
+                <button onclick="closeImageModal()" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div id="uploadZone" class="border-2 border-dashed border-gray-200 rounded-lg p-6 text-center hover:border-teal-400 transition cursor-pointer" onclick="document.getElementById('imageFileInput').click()">
+                    <svg class="w-8 h-8 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    <p class="text-sm text-gray-500 font-medium">Click to upload from device</p>
+                    <p class="text-xs text-gray-400 mt-1">PNG, JPG up to 5MB</p>
+                    <input type="file" id="imageFileInput" accept="image/*" class="hidden" onchange="handleFileUpload(event)">
+                </div>
+                <div id="uploadPreview" class="hidden">
+                    <img id="uploadPreviewImg" src="" class="w-full h-32 object-cover rounded-lg mb-2" alt="Preview">
+                    <button onclick="clearUpload()" class="text-xs text-red-500 hover:text-red-600">Remove image</button>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray-200"></div></div>
+                    <div class="relative flex justify-center"><span class="bg-white px-2 text-xs text-gray-400">OR PASTE URL</span></div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Alt text description (for accessibility)</label>
+                    <input type="text" id="imageAlt" placeholder="Describe the image" class="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none text-sm">
+                </div>
+                <div class="flex space-x-2 pt-2">
+                    <button onclick="closeImageModal()" class="flex-1 px-4 py-2 border border-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 transition">Cancel</button>
+                    <button onclick="insertImage()" class="flex-1 px-4 py-2 bg-teal-600 text-white rounded-lg text-sm font-medium hover:bg-teal-700 transition">Add Image</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== EMBED MODAL ===== -->
+    <div id="embedModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-bold text-lg text-gray-900">Add Embed</h3>
+                <button onclick="closeEmbedModal()" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Platform</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="selectEmbedPlatform('youtube')" class="embed-platform-btn p-3 border-2 border-gray-200 rounded-lg hover:border-teal-500 transition text-center">
+                            <div class="text-2xl mb-1">▶️</div>
+                            <p class="text-xs font-medium text-gray-700">YouTube</p>
+                        </button>
+                        <button onclick="selectEmbedPlatform('tiktok')" class="embed-platform-btn p-3 border-2 border-gray-200 rounded-lg hover:border-teal-500 transition text-center">
+                            <div class="text-2xl mb-1">🎵</div>
+                            <p class="text-xs font-medium text-gray-700">TikTok</p>
+                        </button>
+                        <button onclick="selectEmbedPlatform('instagram')" class="embed-platform-btn p-3 border-2 border-gray-200 rounded-lg hover:border-teal-500 transition text-center">
+                            <div class="text-2xl mb-1">📸</div>
+                            <p class="text-xs font-medium text-gray-700">Instagram</p>
+                        </button>
+                        <button onclick="selectEmbedPlatform('twitter')" class="embed-platform-btn p-3 border-2 border-gray-200 rounded-lg hover:border-teal-500 transition text-center">
+                            <div class="text-2xl mb-1">🐦</div>
+                            <p class="text-xs font-medium text-gray-700">X / Twitter</p>
+                        </button>
+                        <button onclick="selectEmbedPlatform('facebook')" class="embed-platform-btn p-3 border-2 border-gray-200 rounded-lg hover:border-teal-500 transition text-center">
+                            <div class="text-2xl mb-1">👍</div>
+                            <p class="text-xs font-medium text-gray-700">Facebook</p>
+                        </button>
+                        <button onclick="selectEmbedPlatform('custom')" class="embed-platform-btn p-3 border-2 border-gray-200 rounded-lg hover:border-teal-500 transition text-center">
+                            <div class="text-2xl mb-1">🔗</div>
+                            <p class="text-xs font-medium text-gray-700">Custom</p>
+                        </button>
+                    </div>
+                </div>
+                <div id="embedUrlWrapper" class="hidden">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Embed URL</label>
+                    <input type="url" id="embedUrl" placeholder="Paste link here..." class="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none text-sm">
+                    <p class="text-xs text-gray-400 mt-1" id="embedHint">Paste a public post URL</p>
+                </div>
+                <div class="flex space-x-2 pt-2">
+                    <button onclick="closeEmbedModal()" class="flex-1 px-4 py-2 border border-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 transition">Cancel</button>
+                    <button onclick="insertEmbed()" class="flex-1 px-4 py-2 bg-teal-600 text-white rounded-lg text-sm font-medium hover:bg-teal-700 transition">Add Embed</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CTA BUTTON MODAL ===== -->
+    <div id="ctaModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-bold text-lg text-gray-900">Add Button</h3>
+                <button onclick="closeCtaModal()" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Button Text</label>
+                    <input type="text" id="ctaText" placeholder="Read More" class="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Link URL</label>
+                    <input type="url" id="ctaUrl" placeholder="https://..." class="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Button Style</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="ctaStyle" value="orange" checked class="sr-only peer">
+                            <div class="p-2 border-2 border-gray-200 rounded-lg peer-checked:border-orange-500 text-center text-xs font-medium text-white bg-orange-500">Orange</div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="ctaStyle" value="teal" class="sr-only peer">
+                            <div class="p-2 border-2 border-gray-200 rounded-lg peer-checked:border-teal-500 text-center text-xs font-medium text-white bg-teal-600">Teal</div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="ctaStyle" value="outline" class="sr-only peer">
+                            <div class="p-2 border-2 border-gray-200 rounded-lg peer-checked:border-teal-500 text-center text-xs font-medium text-teal-700 border-teal-500 bg-white">Outline</div>
+                        </label>
+                    </div>
+                </div>
+                <div class="flex space-x-2 pt-2">
+                    <button onclick="closeCtaModal()" class="flex-1 px-4 py-2 border border-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 transition">Cancel</button>
+                    <button onclick="insertCta()" class="flex-1 px-4 py-2 bg-teal-600 text-white rounded-lg text-sm font-medium hover:bg-teal-700 transition">Add Button</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SEND MODAL ===== -->
+    <div id="sendModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-bold text-lg text-gray-900">Send Newsletter</h3>
+                <button onclick="closeSendModal()" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-teal-50 border border-teal-100 rounded-xl p-4">
+                    <p class="text-sm text-teal-900">You're about to send <strong id="sendModalTitle">this newsletter</strong> to <strong id="sendModalRecipients">247 recipients</strong>.</p>
+                </div>
+                <label class="flex items-center p-3 bg-gray-50 rounded-lg cursor-pointer">
+                    <input type="checkbox" id="confirmSend" class="mr-3 accent-teal-600 w-4 h-4">
+                    <span class="text-sm text-gray-700">I've reviewed the preview and I'm ready to send</span>
+                </label>
+                <div class="flex space-x-2 pt-2">
+                    <button onclick="closeSendModal()" class="flex-1 px-4 py-2 border border-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 transition">Cancel</button>
+                    <button onclick="confirmSend()" id="confirmSendBtn" disabled class="flex-1 px-4 py-2 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition disabled:opacity-50 disabled:cursor-not-allowed">Send Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div id="toast" class="hidden fixed bottom-6 right-6 z-50 bg-gray-900 text-white px-4 py-3 rounded-xl shadow-lg flex items-center space-x-2">
+        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span id="toastText" class="text-sm">Saved!</span>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== State =====
+        let blocks = [];
+        let selectedBlockId = null;
+        let selectedPreviewBlockId = null;
+        let slashMenuContext = null;
+        let pendingImageAfterId = null;
+        let pendingEmbedAfterId = null;
+        let pendingEmbedPlatform = null;
+        let pendingCtaAfterId = null;
+        let blockIdCounter = 0;
+        let draggedItem = null;
+        let currentImageBlockId = null;
+        let uploadedImageBase64 = null;
+        let savedRange = null;
+
+        // ===== Style State =====
+        let styleConfig = {
+          primaryColor: '#2c7a7b',
+          accentColor: '#f97316',
+          linkColor: '#2c7a7b',
+          textOnPrimary: '#ffffff',
+          bodyTextColor: '#334155',
+          headingColor: '#0f172a',
+          mutedColor: '#64748b',
+          background: '#ffffff',
+          outerBackground: '#f1f5f9',
+          borderColor: '#e2e8f0',
+          blockquoteBg: '#f0fdfa',
+          headingFont: 'Poppins',
+          bodyFont: 'Open Sans',
+          baseFontSize: 15,
+          headingScale: 1.0,
+          lineHeight: 1.6,
+          letterSpacing: 0,
+          contentWidth: 600,
+          contentPadding: 32,
+          blockSpacing: 16,
+          borderRadius: 10,
+          buttonRadius: 999,
+          headerStyle: 'gradient',
+          headerText: 'Slough SEND Parent Carer Forum',
+          headerLogoText: 'S',
+          headerBgColor: '#2c7a7b',
+          headerGradientEnd: '#4fd1c5',
+          headerTextColor: '#ffffff',
+          headerPadding: 20,
+          footerText: "You're receiving this because you're a member of our forum.",
+          footerOrgName: 'Slough SEND Parent Carer Forum',
+          footerBgColor: '#0f172a',
+          footerTextColor: '#94a3b8',
+          footerLinkColor: '#2dd4bf',
+          showUnsubscribe: true,
+          showSocial: false,
+        };
+        const DEFAULT_STYLE = JSON.parse(JSON.stringify(styleConfig));
+
+        const PRESETS = {
+          teal:   { primaryColor:'#2c7a7b', accentColor:'#f97316', linkColor:'#2c7a7b', headerBgColor:'#2c7a7b', headerGradientEnd:'#4fd1c5', blockquoteBg:'#f0fdfa' },
+          purple: { primaryColor:'#7c3aed', accentColor:'#f59e0b', linkColor:'#7c3aed', headerBgColor:'#7c3aed', headerGradientEnd:'#a78bfa', blockquoteBg:'#faf5ff' },
+          blue:   { primaryColor:'#1d4ed8', accentColor:'#ef4444', linkColor:'#1d4ed8', headerBgColor:'#1d4ed8', headerGradientEnd:'#60a5fa', blockquoteBg:'#eff6ff' },
+          rose:   { primaryColor:'#be123c', accentColor:'#0ea5e9', linkColor:'#be123c', headerBgColor:'#be123c', headerGradientEnd:'#fb7185', blockquoteBg:'#fff1f2' },
+          forest: { primaryColor:'#166534', accentColor:'#ca8a04', linkColor:'#166534', headerBgColor:'#166534', headerGradientEnd:'#86efac', blockquoteBg:'#f0fdf4' },
+          slate:  { primaryColor:'#334155', accentColor:'#f97316', linkColor:'#334155', headerBgColor:'#334155', headerGradientEnd:'#94a3b8', blockquoteBg:'#f8fafc' },
+        };
+
+        // ===== Mode Toggle =====
+        function setMode(mode) {
+            const writeBtn = document.getElementById('mode-write');
+            const styleBtn = document.getElementById('mode-style');
+            const writePanel = document.getElementById('writePanel');
+            const stylePanel = document.getElementById('stylePanel');
+
+            if (mode === 'style') {
+                writeBtn.classList.remove('bg-teal-600','text-white');
+                writeBtn.classList.add('text-gray-500','hover:bg-gray-50');
+                styleBtn.classList.add('bg-teal-600','text-white');
+                styleBtn.classList.remove('text-gray-500','hover:bg-gray-50');
+                writePanel.classList.add('hidden');
+                stylePanel.classList.remove('hidden');
+            } else {
+                styleBtn.classList.remove('bg-teal-600','text-white');
+                styleBtn.classList.add('text-gray-500','hover:bg-gray-50');
+                writeBtn.classList.add('bg-teal-600','text-white');
+                writeBtn.classList.remove('text-gray-500','hover:bg-gray-50');
+                stylePanel.classList.add('hidden');
+                writePanel.classList.remove('hidden');
+                clearPreviewBlockSelection();
+            }
+        }
+
+        // ===== Apply Style to Preview =====
+        function applyStyleToPreview() {
+            const wrapper = document.getElementById('previewWrapper');
+            if (!wrapper) return;
+            const s = styleConfig;
+
+            wrapper.style.setProperty('--primary-color', s.primaryColor);
+            wrapper.style.setProperty('--accent-color', s.accentColor);
+            wrapper.style.setProperty('--link-color', s.linkColor);
+            wrapper.style.setProperty('--text-on-primary', s.textOnPrimary);
+            wrapper.style.setProperty('--body-text-color', s.bodyTextColor);
+            wrapper.style.setProperty('--heading-color', s.headingColor);
+            wrapper.style.setProperty('--muted-color', s.mutedColor);
+            wrapper.style.setProperty('--background', s.background);
+            wrapper.style.setProperty('--outer-background', s.outerBackground);
+            wrapper.style.setProperty('--border-color', s.borderColor);
+            wrapper.style.setProperty('--blockquote-bg', s.blockquoteBg);
+            wrapper.style.setProperty('--heading-font', `'${s.headingFont}', sans-serif`);
+            wrapper.style.setProperty('--body-font', `'${s.bodyFont}', sans-serif`);
+            wrapper.style.setProperty('--base-font-size', s.baseFontSize + 'px');
+            wrapper.style.setProperty('--heading-scale', s.headingScale);
+            wrapper.style.setProperty('--line-height', s.lineHeight);
+            wrapper.style.setProperty('--letter-spacing', s.letterSpacing + 'px');
+            wrapper.style.setProperty('--content-width', s.contentWidth + 'px');
+            wrapper.style.setProperty('--content-padding', s.contentPadding + 'px');
+            wrapper.style.setProperty('--block-spacing', s.blockSpacing + 'px');
+            wrapper.style.setProperty('--border-radius', s.borderRadius + 'px');
+            wrapper.style.setProperty('--button-radius', s.buttonRadius + 'px');
+            wrapper.style.setProperty('--header-bg-color', s.headerBgColor);
+            wrapper.style.setProperty('--header-gradient-end', s.headerGradientEnd);
+            wrapper.style.setProperty('--header-text-color', s.headerTextColor);
+            wrapper.style.setProperty('--footer-bg-color', s.footerBgColor);
+            wrapper.style.setProperty('--footer-text-color', s.footerTextColor);
+            wrapper.style.setProperty('--footer-link-color', s.footerLinkColor);
+
+            renderEmailHeader(wrapper);
+            renderEmailFooter(wrapper);
+
+            const contentHolder = wrapper.querySelector('.email-content');
+            if (contentHolder) contentHolder.style.maxWidth = s.contentWidth + 'px';
+
+            const innerContent = wrapper.querySelector('.email-content > div');
+            if (innerContent) innerContent.style.padding = s.contentPadding + 'px';
+
+            updatePreview();
+        }
+
+        function renderEmailHeader(wrapper) {
+            const header = wrapper.querySelector('.email-header');
+            if (!header) return;
+            const s = styleConfig;
+
+            header.className = 'email-header email-header-' + s.headerStyle;
+            header.style.padding = (s.headerPadding || 20) + 'px';
+            header.style.textAlign = 'center';
+            header.style.color = s.headerTextColor;
+
+            let logoBg = s.headerStyle === 'minimal' || s.headerStyle === 'logo' ? s.primaryColor : 'rgba(255,255,255,0.2)';
+            let logoColor = s.headerStyle === 'minimal' || s.headerStyle === 'logo' ? '#fff' : s.headerTextColor;
+
+            let logoHtml = `<div style="width:40px;height:40px;border-radius:9999px;background:${logoBg};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;margin:0 auto 8px;color:${logoColor}">${s.headerLogoText}</div>`;
+
+            header.innerHTML = logoHtml +
+                `<p style="font-size:11px;text-transform:uppercase;letter-spacing:0.05em;opacity:0.9;margin:0">${s.headerText}</p>`;
+        }
+
+        function renderEmailFooter(wrapper) {
+            const footer = wrapper.querySelector('.email-footer');
+            if (!footer) return;
+            const s = styleConfig;
+
+            let links = '';
+            if (s.showUnsubscribe) {
+                links = `<p style="margin-top:8px"><a href="#" style="color:${s.footerLinkColor}">Unsubscribe</a> · <a href="#" style="color:${s.footerLinkColor}">Manage preferences</a></p>`;
+            }
+            footer.innerHTML = `
+                <p style="margin:0 0 8px">${s.footerOrgName}</p>
+                <p style="margin:0">${s.footerText}</p>
+                ${links}
+            `;
+        }
+
+        // ===== Bind Style Controls =====
+        function bindStyleControls() {
+            document.querySelectorAll('[data-style-key]').forEach(input => {
+                const key = input.dataset.styleKey;
+                const event = input.type === 'range' ? 'input' :
+                              input.type === 'checkbox' ? 'change' :
+                              input.type === 'radio' ? 'change' : 'input';
+
+                input.addEventListener(event, () => {
+                    let val;
+                    if (input.type === 'checkbox') val = input.checked;
+                    else if (input.type === 'range') val = parseFloat(input.value);
+                    else if (input.type === 'radio') {
+                        if (!input.checked) return;
+                        val = input.value;
+                    } else val = input.value;
+
+                    styleConfig[key] = val;
+
+                    if (key === 'baseFontSize') document.getElementById('fontSizeLabel').textContent = val;
+                    if (key === 'headingScale') document.getElementById('headingScaleLabel').textContent = val.toFixed(2);
+                    if (key === 'lineHeight') document.getElementById('lineHeightLabel').textContent = val.toFixed(1);
+                    if (key === 'contentWidth') document.getElementById('widthLabel').textContent = val;
+                    if (key === 'contentPadding') document.getElementById('paddingLabel').textContent = val;
+                    if (key === 'blockSpacing') document.getElementById('blockSpacingLabel').textContent = val;
+                    if (key === 'borderRadius') document.getElementById('radiusLabel').textContent = val;
+
+                    applyStyleToPreview();
+                    markUnsaved();
+                });
+            });
+        }
+
+        function applyPreset(name) {
+            const p = PRESETS[name];
+            if (!p) return;
+            Object.assign(styleConfig, p);
+            Object.entries(p).forEach(([k,v]) => {
+                const el = document.querySelector(`[data-style-key="${k}"]`);
+                if (el) el.value = v;
+            });
+            applyStyleToPreview();
+            markUnsaved();
+            showToast(`Applied ${name} theme`);
+        }
+
+        function applyCustomTheme() {
+            const hex = document.getElementById('customThemeColor').value;
+            function shadeColor(color, percent) {
+                let R = parseInt(color.substring(1,3),16);
+                let G = parseInt(color.substring(3,5),16);
+                let B = parseInt(color.substring(5,7),16);
+                R = Math.floor(R * (100 + percent) / 100);
+                G = Math.floor(G * (100 + percent) / 100);
+                B = Math.floor(B * (100 + percent) / 100);
+                R = Math.min(255, Math.max(0, R));
+                G = Math.min(255, Math.max(0, G));
+                B = Math.min(255, Math.max(0, B));
+                const rr = R.toString(16).padStart(2, '0');
+                const gg = G.toString(16).padStart(2, '0');
+                const bb = B.toString(16).padStart(2, '0');
+                return `#${rr}${gg}${bb}`;
+            }
+            const p = {
+                primaryColor: hex,
+                linkColor: hex,
+                headerBgColor: hex,
+                headerGradientEnd: shadeColor(hex, 30),
+                blockquoteBg: shadeColor(hex, 85)
+            };
+            Object.assign(styleConfig, p);
+            Object.entries(p).forEach(([k,v]) => {
+                const el = document.querySelector(`[data-style-key="${k}"]`);
+                if (el) el.value = v;
+            });
+            applyStyleToPreview();
+            markUnsaved();
+            showToast('Applied custom theme');
+        }
+
+        function resetStyle() {
+            if (!confirm('Reset all styling to defaults?')) return;
+            Object.assign(styleConfig, DEFAULT_STYLE);
+            Object.keys(DEFAULT_STYLE).forEach(k => {
+                const el = document.querySelector(`[data-style-key="${k}"]`);
+                if (el) {
+                    if (el.type === 'checkbox') el.checked = styleConfig[k];
+                    else el.value = styleConfig[k];
+                }
+            });
+            applyStyleToPreview();
+            markUnsaved();
+        }
+
+        // ===== Block type definitions =====
+        const BLOCK_TYPES = [
+            { id: 'paragraph',  label: 'Text',           icon: '📝', desc: 'Plain paragraph text', tag: 'p',     placeholder: "Type something, or press '/' for commands..." },
+            { id: 'h1',         label: 'Heading 1',      icon: '🔠', desc: 'Large section heading', tag: 'h1',    placeholder: 'Heading 1' },
+            { id: 'h2',         label: 'Heading 2',      icon: '🔤', desc: 'Medium section heading', tag: 'h2',   placeholder: 'Heading 2' },
+            { id: 'h3',         label: 'Heading 3',      icon: '🔡', desc: 'Smaller sub-heading',     tag: 'h3',   placeholder: 'Heading 3' },
+            { id: 'h4',         label: 'Heading 4',      icon: 'ᴀ',  desc: 'Minor sub-heading',       tag: 'h4',   placeholder: 'Heading 4' },
+            { id: 'h5',         label: 'Heading 5',      icon: 'ᴀ',  desc: 'Small sub-heading',       tag: 'h5',   placeholder: 'Heading 5' },
+            { id: 'h6',         label: 'Heading 6',      icon: 'ᴀ',  desc: 'Smallest heading',        tag: 'h6',   placeholder: 'Heading 6' },
+            { id: 'bulletList', label: 'Bullet List',    icon: '•',  desc: 'Unordered list',          tag: 'ul',   placeholder: 'List item' },
+            { id: 'numberList', label: 'Numbered List',  icon: '1.', desc: 'Ordered list',            tag: 'ol',   placeholder: 'List item' },
+            { id: 'quote',      label: 'Quote',          icon: '❝',  desc: 'Highlighted quotation',   tag: 'blockquote', placeholder: 'Quote text...' },
+            { id: 'image',      label: 'Image',          icon: '🖼️', desc: 'Upload or link a photo',  tag: 'img',  placeholder: '' },
+            { id: 'divider',    label: 'Divider',        icon: '—',  desc: 'Horizontal line',         tag: 'hr',   placeholder: '' },
+            { id: 'spacer',     label: 'Spacer',         icon: '␣',  desc: 'Vertical whitespace',     tag: 'div',  placeholder: '' },
+            { id: 'cta',        label: 'Button',         icon: '🔘', desc: 'Call-to-action button',   tag: 'button', placeholder: '' },
+            { id: 'embed',      label: 'Embed',          icon: '🔗', desc: 'YouTube, TikTok, Instagram, etc.', tag: 'iframe', placeholder: '' }
+        ];
+
+        // ===== Add Block =====
+        function addBlock(type, afterId = null, content = '') {
+            const blockType = BLOCK_TYPES.find(b => b.id === type);
+            if (!blockType) return;
+
+            const id = 'block-' + (++blockIdCounter);
+            const block = { id, type, content, meta: {} };
+
+            if (type === 'bulletList' || type === 'numberList') block.content = '<li>List item</li>';
+            if (type === 'divider') block.content = '<hr>';
+            if (type === 'spacer') block.content = '';
+
+            if (afterId) {
+                const idx = blocks.findIndex(b => b.id === afterId);
+                blocks.splice(idx + 1, 0, block);
+            } else {
+                blocks.push(block);
+            }
+
+            renderBlocks();
+            updatePreview();
+            updateBlockCount();
+
+            setTimeout(() => {
+                const el = document.querySelector(`[data-block-id="${id}"] [contenteditable]`);
+                if (el) {
+                    el.focus();
+                    const range = document.createRange();
+                    range.selectNodeContents(el);
+                    range.collapse(false);
+                    const sel = window.getSelection();
+                    sel.removeAllRanges();
+                    sel.addRange(range);
+                }
+                selectBlock(id);
+            }, 50);
+
+            return id;
+        }
+
+        // ===== Render Blocks =====
+        function renderBlocks() {
+            const editor = document.getElementById('blockEditor');
+            editor.innerHTML = '';
+
+            if (blocks.length === 0) {
+                editor.innerHTML = `
+                    <div class="text-center py-12 text-gray-400">
+                        <svg class="w-12 h-12 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                        <p class="text-sm">No blocks yet. Click <strong>"Add Block"</strong> above or the button below to get started.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            blocks.forEach((block, idx) => {
+                if (idx > 0) {
+                    const spacer = document.createElement('div');
+                    spacer.className = 'add-block-wrapper relative h-3 flex items-center justify-center';
+                    spacer.innerHTML = `
+                        <button onclick="openSlashMenuAt(null, '${block.id}')" class="add-block-btn w-6 h-6 rounded-full bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-400 flex items-center justify-center transition">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+                        </button>
+                    `;
+                    editor.appendChild(spacer);
+                }
+
+                const blockEl = createBlockElement(block);
+                editor.appendChild(blockEl);
+            });
+        }
+
+        // ===== Create Block Element =====
+        function createBlockElement(block) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'editor-block group';
+            wrapper.dataset.blockId = block.id;
+            wrapper.onclick = (e) => {
+                if (e.target.closest('.block-controls')) return;
+                selectBlock(block.id);
+            };
+
+            const controls = document.createElement('div');
+            controls.className = 'block-controls absolute -top-3 right-3 flex bg-white border border-gray-200 rounded-lg shadow-md p-1 space-x-1 z-10';
+            controls.innerHTML = `
+                <button class="drag-handle p-1 text-gray-400 hover:text-teal-600 transition cursor-move" title="Drag to reorder">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" /></svg>
+                </button>
+                <button onclick="openSlashMenuAt(event, '${block.id}')" title="Add block below" class="p-1 text-gray-400 hover:text-teal-600 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+                </button>
+                <button onclick="duplicateBlock('${block.id}')" title="Duplicate" class="p-1 text-gray-400 hover:text-teal-600 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                </button>
+                <button onclick="deleteBlock('${block.id}')" title="Delete" class="p-1 text-gray-400 hover:text-red-500 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                </button>
+            `;
+
+            const content = document.createElement('div');
+            content.className = 'block-content';
+            content.innerHTML = getBlockInnerHtml(block);
+
+            wrapper.appendChild(controls);
+            wrapper.appendChild(content);
+
+            const dragHandle = controls.querySelector('.drag-handle');
+            dragHandle.addEventListener('mousedown', () => {
+                wrapper.draggable = true;
+            });
+
+            attachDragListeners(wrapper, block.id);
+
+            setTimeout(() => {
+                const editables = wrapper.querySelectorAll('[contenteditable]');
+                editables.forEach(editable => {
+                    if (editable.classList.contains('image-caption-input')) {
+                        editable.addEventListener('input', (e) => {
+                            const b = blocks.find(x => x.id === block.id);
+                            if (b) {
+                                b.meta.caption = e.target.innerText;
+                                updatePreview();
+                                markUnsaved();
+                            }
+                        });
+                    } else {
+                        editable.addEventListener('input', (e) => {
+                            const b = blocks.find(x => x.id === block.id);
+                            if (b) {
+                                b.content = e.target.innerHTML;
+                                updatePreview();
+                                markUnsaved();
+                            }
+                        });
+                        editable.addEventListener('keydown', (e) => {
+                            if (e.key === '/' && editable.textContent.trim() === '') {
+                                e.preventDefault();
+                                const rect = editable.getBoundingClientRect();
+                                openSlashMenuAt({ clientX: rect.left, clientY: rect.bottom + 4, preventDefault: () => {} }, block.id, true);
+                            }
+                            if (e.key === 'Enter' && block.type !== 'paragraph' && !e.shiftKey && block.type !== 'bulletList' && block.type !== 'numberList') {
+                                e.preventDefault();
+                                addBlock('paragraph', block.id);
+                            }
+                            if (e.key === 'Backspace' && editable.textContent.trim() === '') {
+                                e.preventDefault();
+                                deleteBlock(block.id);
+                            }
+                        });
+                    }
+                });
+            }, 0);
+
+            return wrapper;
+        }
+
+        // ===== Drag & Drop Logic (From Provided Template) =====
+        function attachDragListeners(el, blockId) {
+            el.addEventListener('dragstart', (e) => {
+                draggedItem = blockId;
+                setTimeout(() => el.classList.add('dragging'), 0);
+            });
+
+            el.addEventListener('dragend', () => {
+                el.classList.remove('dragging');
+                el.draggable = false;
+                draggedItem = null;
+                document.querySelectorAll('.editor-block').forEach(b => {
+                    b.classList.remove('drag-over-top', 'drag-over-bottom');
+                });
+            });
+
+            el.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                if (!draggedItem || draggedItem === blockId) return;
+
+                const rect = el.getBoundingClientRect();
+                const midpoint = rect.top + rect.height / 2;
+
+                // Clear classes from all blocks to keep it clean
+                document.querySelectorAll('.editor-block').forEach(b => {
+                    if (b !== el) {
+                        b.classList.remove('drag-over-top', 'drag-over-bottom');
+                    }
+                });
+
+                if (e.clientY < midpoint) {
+                    el.classList.add('drag-over-top');
+                    el.classList.remove('drag-over-bottom');
+                } else {
+                    el.classList.add('drag-over-bottom');
+                    el.classList.remove('drag-over-top');
+                }
+            });
+
+            el.addEventListener('dragleave', (e) => {
+                if (e.target === el) {
+                    el.classList.remove('drag-over-top', 'drag-over-bottom');
+                }
+            });
+
+            el.addEventListener('drop', (e) => {
+                e.preventDefault();
+                const rect = el.getBoundingClientRect();
+                const midpoint = rect.top + rect.height / 2;
+                const insertBefore = e.clientY < midpoint;
+
+                el.classList.remove('drag-over-top', 'drag-over-bottom');
+                document.querySelectorAll('.editor-block').forEach(b => b.classList.remove('drag-over-top', 'drag-over-bottom'));
+
+                if (draggedItem && draggedItem !== blockId) {
+                    reorderBlocks(draggedItem, blockId, insertBefore);
+                }
+            });
+        }
+
+        function reorderBlocks(draggedId, targetId, insertBefore) {
+            const draggedIdx = blocks.findIndex(b => b.id === draggedId);
+            let targetIdx = blocks.findIndex(b => b.id === targetId);
+            if (draggedIdx === -1 || targetIdx === -1) return;
+
+            const [draggedBlock] = blocks.splice(draggedIdx, 1);
+
+            // Recalculate target index because array changed
+            targetIdx = blocks.findIndex(b => b.id === targetId);
+
+            if (insertBefore) {
+                blocks.splice(targetIdx, 0, draggedBlock);
+            } else {
+                blocks.splice(targetIdx + 1, 0, draggedBlock);
+            }
+            renderBlocks();
+            updatePreview();
+            markUnsaved();
+        }
+
+        // ===== Get Block Inner HTML =====
+        function getBlockInnerHtml(block) {
+            const bt = BLOCK_TYPES.find(b => b.id === block.type);
+            if (!bt) return '';
+
+            switch (block.type) {
+                case 'paragraph':
+                    return `<p contenteditable="true" data-placeholder="${bt.placeholder}" class="text-base text-gray-800 leading-relaxed py-1 focus:outline-none border-none">${block.content || ''}</p>`;
+                case 'h1':
+                    return `<h1 contenteditable="true" data-placeholder="${bt.placeholder}" class="text-3xl font-bold text-gray-900 py-1 focus:outline-none border-none">${block.content || ''}</h1>`;
+                case 'h2':
+                    return `<h2 contenteditable="true" data-placeholder="${bt.placeholder}" class="text-2xl font-bold text-gray-900 py-1 focus:outline-none border-none">${block.content || ''}</h2>`;
+                case 'h3':
+                    return `<h3 contenteditable="true" data-placeholder="${bt.placeholder}" class="text-xl font-semibold text-gray-900 py-1 focus:outline-none border-none">${block.content || ''}</h3>`;
+                case 'h4':
+                    return `<h4 contenteditable="true" data-placeholder="${bt.placeholder}" class="text-lg font-semibold text-gray-900 py-1 focus:outline-none border-none">${block.content || ''}</h4>`;
+                case 'h5':
+                    return `<h5 contenteditable="true" data-placeholder="${bt.placeholder}" class="text-base font-semibold text-gray-900 py-1 focus:outline-none border-none">${block.content || ''}</h5>`;
+                case 'h6':
+                    return `<h6 contenteditable="true" data-placeholder="${bt.placeholder}" class="text-sm font-semibold text-gray-500 uppercase tracking-wide py-1 focus:outline-none border-none">${block.content || ''}</h6>`;
+                case 'bulletList':
+                    return `<ul contenteditable="true" data-placeholder="${bt.placeholder}" class="list-disc pl-6 text-gray-800 py-1 focus:outline-none border-none">${block.content || '<li>List item</li>'}</ul>`;
+                case 'numberList':
+                    return `<ol contenteditable="true" data-placeholder="${bt.placeholder}" class="list-decimal pl-6 text-gray-800 py-1 focus:outline-none border-none">${block.content || '<li>List item</li>'}</ol>`;
+                case 'quote':
+                    return `<blockquote contenteditable="true" data-placeholder="${bt.placeholder}" class="border-l-4 border-teal-500 bg-teal-50 pl-4 pr-3 py-2 italic text-gray-700 rounded-r-lg my-1 focus:outline-none">${block.content || ''}</blockquote>`;
+                case 'divider':
+                    return `<div class="py-2"><hr class="border-gray-200"></div>`;
+                case 'spacer':
+                    return `<div class="h-12 flex items-center justify-center text-xs text-gray-300">— spacer —</div>`;
+                case 'image':
+                    if (block.meta.src) {
+                        return `
+                            <figure class="my-2">
+                                <img src="${block.meta.src}" alt="${block.meta.alt || ''}" class="rounded-lg w-full">
+                                <figcaption contenteditable="true" data-placeholder="Write a caption..." class="image-caption-input text-center text-gray-500 text-sm mt-2 focus:outline-none border-none">${block.meta.caption || ''}</figcaption>
+                            </figure>`;
+                    }
+                    return `<button onclick="openImageModal('${block.id}')" class="w-full p-8 border-2 border-dashed border-gray-200 rounded-xl text-gray-400 hover:border-teal-400 hover:text-teal-600 transition flex flex-col items-center"><svg class="w-8 h-8 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg><span class="text-sm">Click to upload image</span></button>`;
+                case 'cta':
+                    if (block.meta.text && block.meta.url) {
+                        const style = block.meta.style || 'orange';
+                        const cls = style === 'orange' ? 'bg-orange-500 text-white hover:bg-orange-600' : style === 'teal' ? 'bg-teal-600 text-white hover:bg-teal-700' : 'border-2 border-teal-600 text-teal-700 hover:bg-teal-50';
+                        return `<div class="my-2"><a href="${block.meta.url}" onclick="event.preventDefault()" class="inline-block px-6 py-2.5 rounded-full font-medium text-sm ${cls} transition">${block.meta.text}</a></div>`;
+                    }
+                    return `<button onclick="openCtaModal('${block.id}')" class="w-full p-6 border-2 border-dashed border-gray-200 rounded-xl text-gray-400 hover:border-teal-400 hover:text-teal-600 transition flex items-center justify-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.121 2.122" /></svg><span class="text-sm">Add a button (CTA)</span></button>`;
+                case 'embed':
+                    if (block.meta.url) {
+                        return `
+                            <div class="my-2 relative">
+                                <iframe src="${block.meta.url}" class="w-full rounded-lg" style="min-height: 280px; border: none;" loading="lazy"></iframe>
+                                <button onclick="deleteBlock('${block.id}')" class="absolute top-2 right-2 bg-white/90 backdrop-blur p-1 rounded text-gray-500 hover:text-red-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg></button>
+                            </div>`;
+                    }
+                    return `<button onclick="openEmbedModal('${block.id}')" class="w-full p-6 border-2 border-dashed border-gray-200 rounded-xl text-gray-400 hover:border-teal-400 hover:text-teal-600 transition flex items-center justify-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg><span class="text-sm">Add an embed (YouTube, TikTok, Instagram...)</span></button>`;
+                default:
+                    return '';
+            }
+        }
+
+        function selectBlock(id) {
+            selectedBlockId = id;
+            document.querySelectorAll('.editor-block').forEach(el => el.classList.remove('selected'));
+            const el = document.querySelector(`[data-block-id="${id}"]`);
+            if (el) el.classList.add('selected');
+        }
+
+        function deleteBlock(id) {
+            blocks = blocks.filter(b => b.id !== id);
+            renderBlocks();
+            updatePreview();
+            updateBlockCount();
+            markUnsaved();
+        }
+
+        function duplicateBlock(id) {
+            const idx = blocks.findIndex(b => b.id === id);
+            if (idx === -1) return;
+            const copy = JSON.parse(JSON.stringify(blocks[idx]));
+            copy.id = 'block-' + (++blockIdCounter);
+            blocks.splice(idx + 1, 0, copy);
+            renderBlocks();
+            updatePreview();
+            markUnsaved();
+        }
+
+        function updateBlockCount() {
+            document.getElementById('blockCount').textContent = `${blocks.length} block${blocks.length !== 1 ? 's' : ''}`;
+        }
+
+        // ===== Floating Text Toolbar Logic =====
+        document.addEventListener('selectionchange', () => {
+            const selection = window.getSelection();
+            const toolbar = document.getElementById('floatingToolbar');
+            const linkPopover = document.getElementById('linkPopover');
+
+            if (!linkPopover.classList.contains('hidden')) return;
+
+            if (selection.isCollapsed) {
+                toolbar.classList.add('hidden');
+                return;
+            }
+
+            const editor = document.getElementById('blockEditor');
+            if (editor.contains(selection.anchorNode)) {
+                const range = selection.getRangeAt(0);
+                const rect = range.getBoundingClientRect();
+
+                toolbar.classList.remove('hidden');
+                toolbar.style.top = (rect.top - 45) + 'px';
+                toolbar.style.left = (rect.left + rect.width / 2 - 60) + 'px';
+            } else {
+                toolbar.classList.add('hidden');
+            }
+        });
+
+        function formatText(command, value = null) {
+            document.execCommand(command, false, value);
+            document.getElementById('floatingToolbar').classList.add('hidden');
+
+            const selection = window.getSelection();
+            if (selection.anchorNode) {
+                const blockEl = selection.anchorNode.parentElement.closest('.editor-block');
+                if (blockEl) {
+                    const id = blockEl.dataset.blockId;
+                    const b = blocks.find(x => x.id === id);
+                    const editable = blockEl.querySelector('[contenteditable]');
+                    if (b && editable && !editable.classList.contains('image-caption-input')) {
+                        b.content = editable.innerHTML;
+                        updatePreview();
+                        markUnsaved();
+                    }
+                }
+            }
+        }
+
+        function openLinkPopover() {
+            const selection = window.getSelection();
+            if (selection.rangeCount > 0) {
+                savedRange = selection.getRangeAt(0);
+            }
+            const toolbar = document.getElementById('floatingToolbar');
+            const rect = toolbar.getBoundingClientRect();
+            const popover = document.getElementById('linkPopover');
+
+            popover.style.top = (rect.bottom + 8) + 'px';
+            popover.style.left = (rect.left + rect.width / 2 - 100) + 'px';
+            popover.classList.remove('hidden');
+
+            setTimeout(() => document.getElementById('linkUrlInput').focus(), 50);
+        }
+
+        function applyLink() {
+            const url = document.getElementById('linkUrlInput').value.trim();
+            if (!url) return;
+
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(savedRange);
+
+            document.execCommand('createLink', false, url);
+
+            const blockEl = savedRange.startContainer.parentElement.closest('.editor-block');
+            if (blockEl) {
+                const links = blockEl.querySelectorAll('a[href="' + url + '"]');
+                links.forEach(l => l.setAttribute('target', '_blank'));
+
+                const id = blockEl.dataset.blockId;
+                const b = blocks.find(x => x.id === id);
+                const editable = blockEl.querySelector('[contenteditable]');
+                if (b && editable && !editable.classList.contains('image-caption-input')) {
+                    b.content = editable.innerHTML;
+                    updatePreview();
+                    markUnsaved();
+                }
+            }
+
+            document.getElementById('linkPopover').classList.add('hidden');
+            document.getElementById('linkUrlInput').value = '';
+        }
+
+        document.addEventListener('click', (e) => {
+            const popover = document.getElementById('linkPopover');
+            if (!popover.classList.contains('hidden') && !e.target.closest('#linkPopover') && !e.target.closest('#floatingToolbar')) {
+                popover.classList.add('hidden');
+            }
+        });
+
+        // ===== Slash Menu =====
+        function openSlashMenu(btn) { openSlashMenuAt(null, null); }
+
+        function openSlashMenuAt(e, afterId, replaceCurrent = false) {
+            if (e && e.preventDefault) e.preventDefault();
+            slashMenuContext = { afterId, replaceCurrent };
+            const menu = document.getElementById('slashMenu');
+            const search = document.getElementById('slashSearch');
+
+            let x = 100, y = 100;
+            if (e && e.clientX !== undefined) {
+                x = e.clientX; y = e.clientY;
+            } else if (e && e.target) {
+                const rect = e.target.getBoundingClientRect ? e.target.getBoundingClientRect() : null;
+                if (rect) { x = rect.left; y = rect.bottom + 4; }
+            } else {
+                const btn = document.querySelector(`[data-block-id="${afterId}"]`);
+                if (btn) {
+                    const rect = btn.getBoundingClientRect();
+                    x = rect.left + 40; y = rect.bottom + 4;
+                }
+            }
+            menu.style.left = Math.min(x, window.innerWidth - 300) + 'px';
+            menu.style.top = Math.min(y, window.innerHeight - 400) + 'px';
+            menu.classList.remove('hidden');
+            search.value = '';
+            setTimeout(() => search.focus(), 50);
+            renderSlashMenuItems('');
+        }
+
+        function renderSlashMenuItems(filter) {
+            const container = document.getElementById('slashMenuItems');
+            const filtered = BLOCK_TYPES.filter(b => !filter || b.label.toLowerCase().includes(filter.toLowerCase()) || b.desc.toLowerCase().includes(filter.toLowerCase()));
+            if (filtered.length === 0) {
+                container.innerHTML = `<p class="text-sm text-gray-400 text-center py-4">No blocks match "${filter}"</p>`;
+                return;
+            }
+            container.innerHTML = filtered.map(b => `
+                <button onclick="selectSlashItem('${b.id}')" class="w-full flex items-center space-x-3 p-2.5 rounded-lg hover:bg-teal-50 transition text-left">
+                    <div class="w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center text-lg shrink-0">${b.icon}</div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-900">${b.label}</p>
+                        <p class="text-xs text-gray-500">${b.desc}</p>
+                    </div>
+                </button>
+            `).join('');
+        }
+
+        function filterSlashMenu() { renderSlashMenuItems(document.getElementById('slashSearch').value); }
+
+        function selectSlashItem(type) {
+            closeSlashMenu();
+            const ctx = slashMenuContext;
+            if (ctx && ctx.replaceCurrent && ctx.afterId) {
+                const idx = blocks.findIndex(b => b.id === ctx.afterId);
+                if (idx !== -1) {
+                    blocks[idx].type = type;
+                    blocks[idx].content = (type === 'bulletList' || type === 'numberList') ? '<li>List item</li>' : '';
+                    blocks[idx].meta = {};
+                    renderBlocks();
+                    updatePreview();
+                    setTimeout(() => selectBlock(ctx.afterId), 50);
+                    return;
+                }
+            }
+            addBlock(type, ctx ? ctx.afterId : null);
+        }
+
+        function closeSlashMenu() { document.getElementById('slashMenu').classList.add('hidden'); }
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('#slashMenu') && !e.target.closest('[onclick*="openSlashMenu"]')) {
+                closeSlashMenu();
+            }
+        });
+
+        // ===== Image Modal & Upload =====
+        function openImageModal(blockId) {
+            currentImageBlockId = blockId;
+            document.getElementById('imageModal').classList.remove('hidden');
+            document.getElementById('imageUrl').value = '';
+            document.getElementById('imageAlt').value = '';
+            clearUpload();
+        }
+        function closeImageModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+            currentImageBlockId = null;
+            uploadedImageBase64 = null;
+        }
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            if (file.size > 5 * 1024 * 1024) {
+                showToast('File size exceeds 5MB', 'error');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                uploadedImageBase64 = e.target.result;
+                document.getElementById('uploadPreviewImg').src = uploadedImageBase64;
+                document.getElementById('uploadPreview').classList.remove('hidden');
+                document.getElementById('uploadZone').classList.add('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+        function clearUpload() {
+            uploadedImageBase64 = null;
+            document.getElementById('imageFileInput').value = '';
+            document.getElementById('uploadPreview').classList.add('hidden');
+            document.getElementById('uploadZone').classList.remove('hidden');
+        }
+        function insertImage() {
+            const url = document.getElementById('imageUrl').value.trim();
+            const alt = document.getElementById('imageAlt').value.trim();
+            const src = uploadedImageBase64 || url;
+
+            if (!src) { showToast('Please upload an image or enter a URL', 'error'); return; }
+
+            if (currentImageBlockId) {
+                const b = blocks.find(x => x.id === currentImageBlockId);
+                if (b) {
+                    b.meta = { src, alt, caption: b.meta.caption || '' };
+                    b.content = '';
+                    renderBlocks();
+                }
+            } else {
+                const id = addBlock('image', pendingImageAfterId);
+                const b = blocks.find(x => x.id === id);
+                if (b) { b.meta = { src, alt, caption: '' }; renderBlocks(); }
+            }
+            updatePreview();
+            closeImageModal();
+            markUnsaved();
+        }
+
+        // ===== Embed Modal =====
+        let currentEmbedBlockId = null;
+        function openEmbedModal(blockId) {
+            currentEmbedBlockId = blockId;
+            document.getElementById('embedModal').classList.remove('hidden');
+            document.getElementById('embedUrlWrapper').classList.add('hidden');
+            document.getElementById('embedUrl').value = '';
+            pendingEmbedPlatform = null;
+            document.querySelectorAll('.embed-platform-btn').forEach(b => b.classList.remove('border-teal-500', 'bg-teal-50'));
+        }
+        function closeEmbedModal() {
+            document.getElementById('embedModal').classList.add('hidden');
+            currentEmbedBlockId = null;
+            pendingEmbedPlatform = null;
+        }
+        function selectEmbedPlatform(platform) {
+            pendingEmbedPlatform = platform;
+            document.querySelectorAll('.embed-platform-btn').forEach(b => {
+                b.classList.remove('border-teal-500', 'bg-teal-50');
+                b.classList.add('border-gray-200');
+            });
+            event.target.closest('.embed-platform-btn').classList.add('border-teal-500', 'bg-teal-50');
+            document.getElementById('embedUrlWrapper').classList.remove('hidden');
+            const hints = {
+                youtube: 'e.g. https://www.youtube.com/watch?v=...',
+                tiktok: 'e.g. https://www.tiktok.com/@user/video/...',
+                instagram: 'e.g. https://www.instagram.com/p/...',
+                twitter: 'e.g. https://x.com/user/status/...',
+                facebook: 'e.g. https://www.facebook.com/...',
+                custom: 'Any embeddable URL or iframe src'
+            };
+            document.getElementById('embedHint').textContent = hints[platform] || '';
+        }
+        function insertEmbed() {
+            const url = document.getElementById('embedUrl').value.trim();
+            if (!url) { showToast('Please enter a URL', 'error'); return; }
+            if (!pendingEmbedPlatform) { showToast('Please choose a platform', 'error'); return; }
+
+            const embedUrl = convertEmbedUrl(pendingEmbedPlatform, url);
+            if (!embedUrl) { showToast('Could not parse this URL', 'error'); return; }
+
+            if (currentEmbedBlockId) {
+                const b = blocks.find(x => x.id === currentEmbedBlockId);
+                if (b) {
+                    b.meta = { url: embedUrl, originalUrl: url, platform: pendingEmbedPlatform };
+                    renderBlocks();
+                }
+            } else {
+                const id = addBlock('embed', pendingEmbedAfterId);
+                const b = blocks.find(x => x.id === id);
+                if (b) {
+                    b.meta = { url: embedUrl, originalUrl: url, platform: pendingEmbedPlatform };
+                    renderBlocks();
+                }
+            }
+            updatePreview();
+            closeEmbedModal();
+            markUnsaved();
+        }
+
+        function convertEmbedUrl(platform, url) {
+            try {
+                if (platform === 'youtube') {
+                    const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([\w-]{11})/);
+                    return m ? `https://www.youtube.com/embed/${m[1]}` : null;
+                }
+                if (platform === 'tiktok') {
+                    const m = url.match(/video\/(\d+)/);
+                    return m ? `https://www.tiktok.com/embed/v2/${m[1]}` : url;
+                }
+                if (platform === 'instagram') {
+                    const m = url.match(/instagram\.com\/(?:p|reel)\/([\w-]+)/);
+                    return m ? `https://www.instagram.com/p/${m[1]}/embed` : null;
+                }
+                if (platform === 'twitter') {
+                    const m = url.match(/x\.com|twitter\.com\/.*\/status\/(\d+)/);
+                    return m ? `https://platform.twitter.com/embed/Tweet.html?id=${m[1]}` : url;
+                }
+                if (platform === 'facebook') {
+                    return `https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(url)}&show_text=true`;
+                }
+                return url;
+            } catch (err) { return url; }
+        }
+
+        // ===== CTA Modal =====
+        let currentCtaBlockId = null;
+        function openCtaModal(blockId) {
+            currentCtaBlockId = blockId;
+            document.getElementById('ctaModal').classList.remove('hidden');
+            document.getElementById('ctaText').value = '';
+            document.getElementById('ctaUrl').value = '';
+        }
+        function closeCtaModal() {
+            document.getElementById('ctaModal').classList.add('hidden');
+            currentCtaBlockId = null;
+        }
+        function insertCta() {
+            const text = document.getElementById('ctaText').value.trim();
+            const url = document.getElementById('ctaUrl').value.trim();
+            const style = document.querySelector('input[name="ctaStyle"]:checked').value;
+            if (!text || !url) { showToast('Please fill in both fields', 'error'); return; }
+
+            if (currentCtaBlockId) {
+                const b = blocks.find(x => x.id === currentCtaBlockId);
+                if (b) {
+                    b.meta = { text, url, style };
+                    renderBlocks();
+                }
+            } else {
+                const id = addBlock('cta', pendingCtaAfterId);
+                const b = blocks.find(x => x.id === id);
+                if (b) {
+                    b.meta = { text, url, style };
+                    renderBlocks();
+                }
+            }
+            updatePreview();
+            closeCtaModal();
+            markUnsaved();
+        }
+
+        // ===== Live Preview & Per-Block Selection =====
+        function updatePreview() {
+            const title = document.getElementById('newsletterTitle').value || 'Your newsletter title';
+            document.getElementById('previewTitle').textContent = title;
+            const now = new Date();
+            document.getElementById('previewDate').textContent = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+            const pt = document.getElementById('previewText').value;
+            document.getElementById('previewCount').textContent = pt.length;
+            const preview = document.getElementById('previewContent');
+            if (blocks.length === 0) {
+                preview.innerHTML = '<p class="text-gray-400 italic">Start adding blocks to see your newsletter come to life...</p>';
+                return;
+            }
+            preview.innerHTML = blocks.map(b => renderBlockForPreview(b)).join('');
+
+            bindPreviewBlockSelection();
+            if (selectedPreviewBlockId) {
+                const el = document.querySelector(`[data-preview-block-id="${selectedPreviewBlockId}"]`);
+                if (el) el.classList.add('preview-block-selected');
+            }
+        }
+
+        function renderBlockForPreview(block) {
+            const styles = block.meta.styles || {};
+            const wrapperStyle = `background:${styles.bgColor || 'transparent'};padding:${styles.padding || '0px'};text-align:${styles.align || 'left'};`;
+
+            // Create style attributes to inject directly into elements to override CSS rules
+            const styleAttrs = `style="color:${styles.textColor || 'inherit'};font-family:${styles.font && styles.font !== 'inherit' ? `'${styles.font}', sans-serif` : 'inherit'};"`;
+
+            let inner = '';
+            switch (block.type) {
+                case 'paragraph':   inner = `<p ${styleAttrs}>${block.content || ''}</p>`; break;
+                case 'h1': inner = `<h1 ${styleAttrs}>${block.content || ''}</h1>`; break;
+                case 'h2': inner = `<h2 ${styleAttrs}>${block.content || ''}</h2>`; break;
+                case 'h3': inner = `<h3 ${styleAttrs}>${block.content || ''}</h3>`; break;
+                case 'h4': inner = `<h4 ${styleAttrs}>${block.content || ''}</h4>`; break;
+                case 'h5': inner = `<h5 ${styleAttrs}>${block.content || ''}</h5>`; break;
+                case 'h6': inner = `<h6 ${styleAttrs}>${block.content || ''}</h6>`; break;
+                case 'bulletList':  inner = `<ul ${styleAttrs}>${block.content || ''}</ul>`; break;
+                case 'numberList':  inner = `<ol ${styleAttrs}>${block.content || ''}</ol>`; break;
+                case 'quote':       inner = `<blockquote ${styleAttrs}>${block.content || ''}</blockquote>`; break;
+                case 'divider':     inner = `<hr>`; break;
+                case 'spacer':      inner = `<div style="height: 32px;"></div>`; break;
+                case 'image':
+                    if (!block.meta.src) return '';
+                    inner = `<figure><img src="${block.meta.src}" alt="${block.meta.alt || ''}">${block.meta.caption ? `<figcaption style="font-size:12px;color:#64748b;text-align:center;margin-top:4px;">${block.meta.caption}</figcaption>` : ''}</figure>`;
+                    break;
+                case 'cta':
+                    if (!block.meta.text || !block.meta.url) return '';
+                    const cls = block.meta.style === 'teal' ? 'background:var(--primary-color);' : block.meta.style === 'outline' ? 'background:transparent;color:var(--primary-color);border:2px solid var(--primary-color);' : 'background:var(--accent-color);';
+                    inner = `<div><a href="${block.meta.url}" class="cta-button" style="${cls}">${block.meta.text}</a></div>`;
+                    break;
+                case 'embed':
+                    if (!block.meta.url) return '';
+                    inner = `<div class="embed-wrapper"><iframe src="${block.meta.url}" loading="lazy"></iframe></div>`;
+                    break;
+                default: return '';
+            }
+            return `<div data-preview-block-id="${block.id}" class="preview-block-item transition cursor-pointer hover:outline hover:outline-2 hover:outline-teal-400" style="${wrapperStyle}">${inner}</div>`;
+        }
+
+        function bindPreviewBlockSelection() {
+            document.querySelectorAll('[data-preview-block-id]').forEach(el => {
+                el.onclick = (e) => {
+                    if (document.getElementById('stylePanel').classList.contains('hidden')) return; // Only in Style mode
+                    e.stopPropagation();
+                    const id = el.dataset.previewBlockId;
+                    selectPreviewBlock(id);
+                };
+            });
+        }
+
+        function selectPreviewBlock(id) {
+            selectedPreviewBlockId = id;
+            document.querySelectorAll('[data-preview-block-id]').forEach(el => el.classList.remove('preview-block-selected'));
+            const el = document.querySelector(`[data-preview-block-id="${id}"]`);
+            if (el) el.classList.add('preview-block-selected');
+
+            const panel = document.getElementById('blockStylePanel');
+            panel.classList.remove('hidden');
+
+            const block = blocks.find(b => b.id === id);
+            if (block) {
+                if (!block.meta.styles) block.meta.styles = {};
+                document.getElementById('blockBgColor').value = block.meta.styles.bgColor || '#ffffff';
+                document.getElementById('blockAlign').value = block.meta.styles.align || 'left';
+                document.getElementById('blockTextColor').value = block.meta.styles.textColor || '#334155';
+                document.getElementById('blockFont').value = block.meta.styles.font || 'inherit';
+                document.getElementById('blockPadding').value = block.meta.styles.padding || '0';
+                document.getElementById('blockPaddingLabel').textContent = block.meta.styles.padding || '0';
+            }
+            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function clearPreviewBlockSelection() {
+            selectedPreviewBlockId = null;
+            document.querySelectorAll('[data-preview-block-id]').forEach(el => el.classList.remove('preview-block-selected'));
+            document.getElementById('blockStylePanel').classList.add('hidden');
+        }
+
+        function updatePreviewBlockStyle() {
+            if (!selectedPreviewBlockId) return;
+            const block = blocks.find(b => b.id === selectedPreviewBlockId);
+            if (!block) return;
+
+            if (!block.meta.styles) block.meta.styles = {};
+            block.meta.styles.bgColor = document.getElementById('blockBgColor').value;
+            block.meta.styles.align = document.getElementById('blockAlign').value;
+            block.meta.styles.textColor = document.getElementById('blockTextColor').value;
+            block.meta.styles.font = document.getElementById('blockFont').value;
+            const pad = document.getElementById('blockPadding').value;
+            block.meta.styles.padding = pad;
+            document.getElementById('blockPaddingLabel').textContent = pad;
+
+            updatePreview();
+            markUnsaved();
+        }
+
+        function setPreviewDevice(device) {
+            const wrapper = document.getElementById('previewWrapper');
+            if (device === 'mobile') {
+                wrapper.classList.remove('device-desktop');
+                wrapper.classList.add('device-mobile');
+                document.getElementById('deviceMobile').classList.add('text-teal-600');
+                document.getElementById('deviceDesktop').classList.remove('text-teal-600');
+            } else {
+                wrapper.classList.add('device-desktop');
+                wrapper.classList.remove('device-mobile');
+                document.getElementById('deviceDesktop').classList.add('text-teal-600');
+                document.getElementById('deviceMobile').classList.remove('text-teal-600');
+            }
+        }
+
+        // ===== Tabs =====
+        function switchTab(tab) {
+            ['preview','recipients','settings'].forEach(t => {
+                document.getElementById('tab-' + t).classList.remove('active');
+                document.getElementById('pane-' + t).classList.add('hidden');
+            });
+            document.getElementById('tab-' + tab).classList.add('active');
+            document.getElementById('pane-' + tab).classList.remove('hidden');
+        }
+
+        // ===== Save / Send =====
+        let saveTimeout;
+        function markUnsaved() {
+            const status = document.getElementById('saveStatusText');
+            status.textContent = 'Saving...';
+            clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(() => { status.textContent = 'Saved as draft'; }, 1000);
+        }
+
+        function saveDraft() {
+            const payload = {
+                title: document.getElementById('newsletterTitle').value,
+                subject: document.getElementById('emailSubject').value,
+                preview_text: document.getElementById('previewText').value,
+                blocks: blocks,
+                style: styleConfig
+            };
+            console.log('Saving newsletter draft:', payload);
+            showToast('Draft saved successfully');
+            document.getElementById('saveStatusText').textContent = 'Saved as draft';
+        }
+
+        function openSendModal() {
+            const title = document.getElementById('newsletterTitle').value || 'this newsletter';
+            document.getElementById('sendModalTitle').textContent = title;
+            const recipientLabel = document.querySelector('input[name="recipientGroup"]:checked');
+            const counts = { all: '247 recipients', active: '132 recipients', admins: '5 recipients', custom: 'a custom segment' };
+            document.getElementById('sendModalRecipients').textContent = counts[recipientLabel?.value] || 'recipients';
+            document.getElementById('sendModal').classList.remove('hidden');
+            document.getElementById('confirmSend').checked = false;
+            document.getElementById('confirmSendBtn').disabled = true;
+        }
+        function closeSendModal() { document.getElementById('sendModal').classList.add('hidden'); }
+        document.addEventListener('change', (e) => {
+            if (e.target.id === 'confirmSend') {
+                document.getElementById('confirmSendBtn').disabled = !e.target.checked;
+            }
+        });
+        function confirmSend() {
+            closeSendModal();
+            showToast('Newsletter sent! 🎉');
+        }
+
+        // ===== Toast =====
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastText').textContent = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 3000);
+        }
+
+        // ===== Init =====
+        document.addEventListener('DOMContentLoaded', () => {
+            bindStyleControls();
+            applyStyleToPreview();
+
+            addBlock('h1', null, 'Welcome to our October Update');
+            addBlock('paragraph', 'block-1', 'Hello everyone, and welcome to this month\'s edition of the Slough SEND Parent Carer Forum newsletter. It\'s been a busy few weeks, and we\'ve got plenty to share with you.');
+            addBlock('h2', 'block-2', 'What\'s new this month');
+            addBlock('bulletList', 'block-3', '<li>New co-production meeting dates announced</li><li>Updated resources for EHCP applications</li><li>Drop-in sessions every Wednesday</li>');
+            addBlock('image', 'block-4');
+            addBlock('quote', 'block-5', 'Together, we make sure every family\'s voice is heard.');
+            addBlock('cta', 'block-6');
+
+            updatePreview();
+            updateBlockCount();
+            setPreviewDevice('desktop');
+        });
+
+        document.getElementById('previewText').addEventListener('input', () => {
+            document.getElementById('previewCount').textContent = document.getElementById('previewText').value.length;
+        });
+    </script>
+</body>
+</html>

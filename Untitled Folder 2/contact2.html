@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us · Slough SEND Parent Carer Forum</title>
+    <meta name="description" content="Get in touch with Slough SEND Parent Carer Forum — questions, event bookings, or joining our steering committee. We usually reply within 1-2 working days.">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #2c7a7b 0%, #4fd1c5 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ===== NAVBAR ===== -->
+    <!-- Standalone page — no nav item highlighted. Link here from the footer or other CTAs. -->
+    <nav id="navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-teal-700 text-lg leading-none">Slough SEND</span>
+                        <span class="text-xs text-gray-500 leading-none mt-1">Parent Carer Forum</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-teal-600 font-medium transition">About Us</a>
+                    <a href="events.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Events</a>
+                    <a href="support.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Support</a>
+                    <a href="#" class="text-teal-700 border border-teal-700 px-5 py-2 rounded-full hover:bg-teal-50 font-medium transition">Login</a>
+                    <a href="#" class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 font-medium shadow-sm transition">Join Forum</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-gray-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                <a href="events.html" class="text-gray-600 hover:text-teal-600 font-medium">Events</a>
+                <a href="support.html" class="text-gray-600 hover:text-teal-600 font-medium">Support</a>
+                <div class="flex space-x-3 pt-2">
+                    <a href="#" class="flex-1 text-center text-teal-700 border border-teal-700 px-4 py-2 rounded-full font-medium">Login</a>
+                    <a href="#" class="flex-1 text-center bg-orange-500 text-white px-4 py-2 rounded-full font-medium">Join Forum</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <header class="pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-bg z-0"></div>
+        <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=2070&auto=format&fit=crop');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-medium mb-4">Get in Touch</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">Contact Us</h1>
+            <p class="text-lg text-teal-50 max-w-2xl mx-auto">Whether you've got a question, or you're interested in getting more involved with the forum, we'd love to hear from you.</p>
+        </div>
+    </header>
+
+    <!-- ===== CONTACT FORM + SIDEBAR ===== -->
+    <section class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-5 gap-8 items-start">
+
+                <!-- ===== FORM ===== -->
+                <div class="lg:col-span-3 bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
+                    <p class="text-sm text-gray-500 mb-8">Fill in the form below and we'll get back to you within 1-2 working days.</p>
+
+                    <form id="contactForm" novalidate>
+                        <!-- Honeypot field — hidden from humans, catches bots. Leave as-is. -->
+                        <input type="text" id="honeypot" name="honeypot" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                        <div id="formFields">
+                            <!-- Name + Email -->
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="nameInput" class="block text-sm font-semibold text-gray-700 mb-2">Your Name <span class="text-orange-500">*</span></label>
+                                    <input type="text" id="nameInput" name="name" placeholder="Your name" autocomplete="name"
+                                           class="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-gray-800 placeholder-gray-400 bg-white focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition">
+                                    <p id="nameError" role="alert" class="hidden text-xs text-red-500 mt-2">Please tell us your name.</p>
+                                </div>
+                                <div>
+                                    <label for="emailInput" class="block text-sm font-semibold text-gray-700 mb-2">Email Address <span class="text-orange-500">*</span></label>
+                                    <input type="email" id="emailInput" name="email" placeholder="you@example.com" autocomplete="email"
+                                           class="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-gray-800 placeholder-gray-400 bg-white focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition">
+                                    <p id="emailError" role="alert" class="hidden text-xs text-red-500 mt-2">Please enter a valid email address.</p>
+                                </div>
+                            </div>
+
+                            <!-- Topic + Subject -->
+                            <div class="grid sm:grid-cols-2 gap-5 mt-5">
+                                <div>
+                                    <label for="topicSelect" class="block text-sm font-semibold text-gray-700 mb-2">What's this about? <span class="text-orange-500">*</span></label>
+                                    <div class="relative">
+                                        <select id="topicSelect" name="topic"
+                                                class="appearance-none w-full rounded-xl border border-gray-200 px-4 py-3.5 pr-10 text-gray-800 bg-white focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition">
+                                            <option value="" disabled selected>Choose a topic…</option>
+                                            <option value="general">General enquiry</option>
+                                            <option value="event">Event booking</option>
+                                            <option value="steering">Joining the steering committee</option>
+                                        </select>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                                    </div>
+                                    <p class="text-xs text-gray-400 mt-1.5">This helps us route your message.</p>
+                                    <p id="topicError" role="alert" class="hidden text-xs text-red-500 mt-1">Please choose a topic.</p>
+                                </div>
+                                <div>
+                                    <label for="subjectInput" class="block text-sm font-semibold text-gray-700 mb-2">Subject <span class="text-orange-500">*</span></label>
+                                    <input type="text" id="subjectInput" name="subject" placeholder="How can we help?"
+                                           class="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-gray-800 placeholder-gray-400 bg-white focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition">
+                                    <p id="subjectError" role="alert" class="hidden text-xs text-red-500 mt-2">Please add a subject.</p>
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="mt-5">
+                                <label for="messageInput" class="block text-sm font-semibold text-gray-700 mb-2">Message <span class="text-orange-500">*</span></label>
+                                <textarea id="messageInput" name="message" rows="5" placeholder="Write your message here…"
+                                          class="w-full rounded-xl border border-gray-200 px-4 py-3.5 text-gray-800 placeholder-gray-400 bg-white focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition"></textarea>
+                                <p id="messageError" role="alert" class="hidden text-xs text-red-500 mt-2">Please write a message.</p>
+                            </div>
+
+                            <!-- Consent -->
+                            <div class="mt-5">
+                                <label class="flex items-start cursor-pointer">
+                                    <input type="checkbox" id="consentCheck" name="consent" class="w-5 h-5 accent-teal-600 rounded mt-0.5 shrink-0">
+                                    <span class="ml-3 text-sm text-gray-600 leading-relaxed">I'm happy for Slough SEND PCF to store my details in order to respond to my enquiry, in line with the
+                                        <!-- TODO: Link to the privacy policy page when created -->
+                                        <a href="privacy.html" class="text-teal-700 font-semibold underline hover:text-teal-800">privacy policy</a>.
+                                        <span class="text-orange-500">*</span>
+                                    </span>
+                                </label>
+                                <p id="consentError" role="alert" class="hidden text-xs text-red-500 mt-2">Please agree so we can store your details and reply.</p>
+                            </div>
+
+                            <button type="submit" class="w-full sm:w-auto mt-7 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3.5 px-8 rounded-full transition inline-flex items-center justify-center shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-400">
+                                Send Message
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                            </button>
+                        </div>
+
+                        <!-- Success state (shown after a valid submit) -->
+                        <div id="successMessage" class="hidden text-center py-8">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5 text-green-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Thanks — your message is on its way!</h3>
+                            <p class="text-gray-600 leading-relaxed">We usually reply within 1-2 working days. Keep an eye on your inbox — and maybe your spam folder, just in case.</p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- ===== SIDEBAR ===== -->
+                <div class="lg:col-span-2 space-y-8">
+
+                    <!-- Other ways to reach us -->
+                    <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Other Ways to Reach Us</h3>
+                        <ul class="space-y-6">
+                            <li class="flex items-center">
+                                <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mr-4 shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">Email</p>
+                                    <a href="mailto:info@sloughsendpcf.org" class="text-gray-800 font-semibold hover:text-teal-700 transition break-all">info@sloughsendpcf.org</a>
+                                </div>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mr-4 shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">Location</p>
+                                    <p class="text-gray-800 font-semibold">Slough, Berkshire</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mr-4 shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">Response Time</p>
+                                    <p class="text-gray-800 font-semibold">Within 1-2 working days</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Why you should join -->
+                    <div class="bg-gray-900 rounded-3xl p-8 relative overflow-hidden">
+                        <div class="absolute -top-20 -right-20 w-56 h-56 bg-orange-500/10 rounded-full blur-3xl"></div>
+                        <div class="relative">
+                            <span class="inline-block bg-orange-500/20 text-orange-400 px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-5">Why You Should Join</span>
+                            <ul class="space-y-3.5 text-sm text-gray-300 mb-8">
+                                <li class="flex"><span class="text-orange-400 mr-3 mt-0.5 shrink-0">✔</span> Share your experiences and views</li>
+                                <li class="flex"><span class="text-orange-400 mr-3 mt-0.5 shrink-0">✔</span> Receive SEND-related news, events and surveys</li>
+                                <li class="flex"><span class="text-orange-400 mr-3 mt-0.5 shrink-0">✔</span> Contribute to shaping local SEND policy and services with the official forum</li>
+                            </ul>
+                            <!-- TODO: Link to the Join Forum page / membership form -->
+                            <a href="#" class="inline-flex items-center bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition">
+                                Join Forum
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER + SOCIAL ===== -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- Newsletter -->
+                <div class="gradient-bg rounded-3xl p-8 md:p-10 text-white relative overflow-hidden">
+                    <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Subscribe to Newsletter</h3>
+                    <p class="text-teal-50 text-sm leading-relaxed mb-6">Occasional emails with what's on locally for Slough SEND families, plus news, discussions and meet-up dates. Unsubscribe at any time.</p>
+                    <a href="newsletter.html" class="inline-flex items-center bg-white text-teal-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-50 transition">
+                        Subscribe
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+
+                <!-- Social media -->
+                <div class="bg-gray-900 rounded-3xl p-8 md:p-10 text-white relative overflow-hidden">
+                    <div class="absolute -bottom-20 -right-20 w-56 h-56 bg-teal-500/10 rounded-full blur-3xl"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-5 text-orange-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Find Us on Social Media</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">You can also reach out through our social media accounts and engage with us through those platforms as well.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <!-- TODO: Add Facebook page URL -->
+                            <a href="#" class="inline-flex items-center bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full font-medium text-sm transition">
+                                <svg class="h-4 w-4 mr-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                                Facebook
+                            </a>
+                            <!-- TODO: Add Instagram page URL -->
+                            <a href="#" class="inline-flex items-center bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full font-medium text-sm transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                                    <circle cx="12" cy="12" r="4" />
+                                    <circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" stroke="none" />
+                                </svg>
+                                Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-xs text-gray-500 mt-10">Funded by the Department for Education and a member of the National Network of Parent Carer Forums.</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-900 text-gray-300 pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                        <span class="font-bold text-white text-lg">Slough SEND PCF</span>
+                    </a>
+                    <p class="text-sm text-gray-400">Supporting families. Empowering voices. Creating positive change together. Every voice matters.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Emergency Contacts</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-red-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" fill-rule="evenodd"/></svg> NHS 111 - Non-emergency</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-blue-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" clip-rule="evenodd" fill-rule="evenodd"/></svg> 999 - Emergency Services</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-green-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" fill-rule="evenodd"/><path d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" fill-rule="evenodd"/></svg> Childline - 0800 1111</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Get Involved</h4>
+                    <p class="text-sm text-gray-400 mb-4">Become a member today and join our private community.</p>
+                    <a href="#" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-600 transition">Request Access</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2023 Slough SEND Parent Carer Forum. Funded by the Department for Education. Independent of the council and NHS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar shadow on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+
+    <!-- ===== CONTACT FORM ===== -->
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const consentCheck = document.getElementById('consentCheck');
+        const consentError = document.getElementById('consentError');
+
+        const fields = [
+            { input: document.getElementById('nameInput'),    error: document.getElementById('nameError'),    test: v => v.trim().length > 0 },
+            { input: document.getElementById('emailInput'),   error: document.getElementById('emailError'),   test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
+            { input: document.getElementById('topicSelect'),  error: document.getElementById('topicError'),   test: v => v !== '' },
+            { input: document.getElementById('subjectInput'), error: document.getElementById('subjectError'), test: v => v.trim().length > 0 },
+            { input: document.getElementById('messageInput'), error: document.getElementById('messageError'), test: v => v.trim().length > 0 }
+        ];
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Honeypot filled in = bot. Silently do nothing.
+            if (document.getElementById('honeypot').value !== '') return;
+
+            let valid = true;
+
+            fields.forEach(f => {
+                const ok = f.test(f.input.value);
+                f.error.classList.toggle('hidden', ok);
+                if (!ok) valid = false;
+            });
+
+            if (!consentCheck.checked) {
+                consentError.classList.remove('hidden');
+                valid = false;
+            } else {
+                consentError.classList.add('hidden');
+            }
+
+            if (!valid) return;
+
+            // ================================================================
+            // DEMO SUCCESS STATE — swap this block for your real endpoint:
+            //
+            //   fetch('/api/contact', {
+            //       method: 'POST',
+            //       headers: { 'Content-Type': 'application/json' },
+            //       body: JSON.stringify({
+            //           name: ..., email: ..., topic: ..., subject: ..., message: ...
+            //       })
+            //   })
+            //   .then(res => res.json())
+            //   .then(data => {
+            //       // Only show success after a real "sent" response
+            //   });
+            // ================================================================
+            document.getElementById('formFields').classList.add('hidden');
+            document.getElementById('successMessage').classList.remove('hidden');
+            contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        // Clear errors as the user fixes them
+        fields.forEach(f => f.input.addEventListener('input', () => f.error.classList.add('hidden')));
+        consentCheck.addEventListener('change', () => consentError.classList.add('hidden'));
+    </script>
+</body>
+</html>

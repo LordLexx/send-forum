@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login · Slough SEND Parent Carer Forum</title>
+    <meta name="description" content="Login to the Slough SEND Parent Carer Forum. A private, secure community for parent carers.">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #2c7a7b 0%, #4fd1c5 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="min-h-screen flex flex-col lg:flex-row">
+
+        <!-- ===== LEFT PANEL (Branding / Welcome) ===== -->
+        <div class="hidden lg:flex lg:w-1/2 gradient-bg relative overflow-hidden">
+            <!-- Background Image Overlay -->
+            <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1503436526206-9b1124713b1f?q=80&w=2070&auto=format&fit=crop');"></div>
+            
+            <div class="relative z-10 flex flex-col justify-between p-12 text-white w-full">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 w-fit">
+                    <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white font-bold text-xl border border-white/30">S</div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg leading-none">Slough SEND</span>
+                        <span class="text-xs text-teal-50 leading-none mt-1">Parent Carer Forum</span>
+                    </div>
+                </a>
+
+                <!-- Welcome Message -->
+                <div class="max-w-md">
+                    <h2 class="text-4xl font-bold leading-tight mb-4">Welcome back to your safe space.</h2>
+                    <p class="text-lg text-teal-50 leading-relaxed">You are not alone. Log in to connect with other parent carers, share experiences, and access your support resources.</p>
+                </div>
+
+                <!-- Trust Signals -->
+                <div class="space-y-4">
+                    <div class="flex items-center text-teal-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                        <span class="font-medium text-sm">100% Private & Secure · Admin Approved Accounts</span>
+                    </div>
+                    <div class="flex items-center text-teal-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span class="font-medium text-sm">Run by parent carers, for parent carers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== RIGHT PANEL (Login Form) ===== -->
+        <div class="lg:w-1/2 flex flex-col justify-center items-center p-6 sm:p-12 bg-white">
+            
+            <!-- Mobile Logo (Visible only on small screens) -->
+            <div class="lg:hidden mb-12 flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-teal-700 text-lg leading-none">Slough SEND</span>
+                    <span class="text-xs text-gray-500 leading-none mt-1">Parent Carer Forum</span>
+                </div>
+            </div>
+
+            <div class="w-full max-w-md">
+                <!-- Form Header -->
+                <div class="mb-8">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Log in to your account</h1>
+                    <p class="text-gray-500">Enter your details to access the forum.</p>
+                </div>
+
+                <!-- Alert Box (Visual Example) -->
+                <div class="hidden mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-red-700">Your account is pending admin approval. Please check back shortly.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Login Form -->
+                <form class="space-y-6" action="#" method="POST">
+                    <!-- Email Input -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <input type="email" id="email" name="email" required class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition" placeholder="you@example.com">
+                        </div>
+                    </div>
+
+                    <!-- Password Input -->
+                    <div>
+                        <div class="flex items-center justify-between mb-1">
+                            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                            <a href="#" class="text-sm font-medium text-teal-600 hover:text-teal-500 transition">Forgot password?</a>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                            </div>
+                            <input type="password" id="password" name="password" required class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition" placeholder="••••••••">
+                        </div>
+                    </div>
+
+                    <!-- Remember Me -->
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-700">Keep me logged in on this device</label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div>
+                        <button type="submit" class="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-300">
+                            Log In to Forum
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Divider -->
+                <div class="mt-8">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-200"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-4 bg-white text-gray-400">Not a member yet?</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Register Link -->
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-600 mb-4">If you are a parent carer of a child with SEND in Slough, you can request access to our private community.</p>
+                    <a href="#" class="inline-block w-full justify-center py-3 px-4 border-2 border-teal-600 rounded-lg shadow-sm text-sm font-medium text-teal-700 bg-white hover:bg-teal-50 transition duration-300">
+                        Request Access to Join
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // You can add any specific JS for password toggles here if needed
+    </script>
+</body>
+</html>

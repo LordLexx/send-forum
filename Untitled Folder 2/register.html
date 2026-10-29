@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Forum · Slough SEND Parent Carer Forum</title>
+    <meta name="description" content="Become a member of the Slough SEND Parent Carer Forum. Apply today to join our private, supportive community.">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #2c7a7b 0%, #4fd1c5 100%); }
+        /* Custom radio button styling */
+        .radio-card {
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .radio-card:hover {
+            border-color: #2c7a7b;
+            background-color: #f0fdfa;
+        }
+        input[type="radio"]:checked + label {
+            border-color: #2c7a7b;
+            background-color: #f0fdfa;
+            box-shadow: 0 0 0 1px #2c7a7b;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="min-h-screen flex flex-col lg:flex-row">
+
+        <!-- ===== LEFT PANEL (Branding / Info) ===== -->
+        <div class="hidden lg:flex lg:w-1/2 gradient-bg relative overflow-hidden">
+            <!-- Background Image Overlay -->
+            <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop');"></div>
+            
+            <div class="relative z-10 flex flex-col justify-between p-12 text-white w-full overflow-y-auto">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 w-fit">
+                    <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white font-bold text-xl border border-white/30">S</div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg leading-none">Slough SEND</span>
+                        <span class="text-xs text-teal-50 leading-none mt-1">Parent Carer Forum</span>
+                    </div>
+                </a>
+
+                <!-- Main Message -->
+                <div class="max-w-md my-12">
+                    <h2 class="text-4xl font-bold leading-tight mb-4">Join the Forum</h2>
+                    <p class="text-lg text-teal-50 leading-relaxed mb-8">Help make a difference for families in Slough with Slough’s official SEND parent carer forum.</p>
+                    
+                    <!-- Why Join List -->
+                    <div class="space-y-4 bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                        <h3 class="font-semibold text-lg mb-2">Why you should join:</h3>
+                        <div class="flex items-start">
+                            <svg class="h-6 w-6 mr-3 text-teal-200 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span>Share your experiences and views</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="h-6 w-6 mr-3 text-teal-200 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span>Receive SEND-related news, events and surveys</span>
+                        </div>
+                        <div class="flex items-start">
+                            <svg class="h-6 w-6 mr-3 text-teal-200 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <span>Contribute to shaping local SEND policy and services with the official forum</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eligibility Note -->
+                <div class="max-w-md text-sm text-teal-50/80 border-t border-white/20 pt-6">
+                    <p class="font-semibold text-white mb-1">Who can join?</p>
+                    <p>Membership is open to parents, carers and family members of children and young people aged 0–25 with special educational needs or disabilities who live in or access services in Slough.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== RIGHT PANEL (Registration Form) ===== -->
+        <div class="lg:w-1/2 flex flex-col justify-center items-center p-6 sm:p-12 bg-white">
+            
+            <!-- Mobile Logo (Visible only on small screens) -->
+            <div class="lg:hidden mb-10 flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-teal-700 text-lg leading-none">Slough SEND</span>
+                    <span class="text-xs text-gray-500 leading-none mt-1">Parent Carer Forum</span>
+                </div>
+            </div>
+
+            <div class="w-full max-w-md">
+                <!-- Form Header -->
+                <div class="mb-6">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Become a Member</h1>
+                    <p class="text-gray-500">Fill in the form below to apply to become a member.</p>
+                </div>
+
+                <!-- Reassurance Callout -->
+                <div class="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r-lg mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-teal-800"><strong>You do not need a formal diagnosis to join.</strong> If you believe your child has additional needs, your voice and experience are important.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="space-y-6" action="#" method="POST">
+                    
+                    <!-- Section: Your Details -->
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-bold text-gray-700 uppercase tracking-wider">Your Details</h3>
+                        
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" required class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition" placeholder="Jane Doe">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition" placeholder="you@example.com">
+                        </div>
+
+                        <div>
+                            <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Address</label>
+                            <input type="text" id="address" name="address" required class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition" placeholder="123 Slough Street">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="sm:col-span-2">
+                                <label for="city" class="block text-sm font-medium text-gray-700 mb-1">Town/City</label>
+                                <input type="text" id="city" name="city" required class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition" placeholder="Slough">
+                            </div>
+                            <div>
+                                <label for="postcode" class="block text-sm font-medium text-gray-700 mb-1">Postcode</label>
+                                <input type="text" id="postcode" name="postcode" required class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition" placeholder="SL1 0AA">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telephone</label>
+                            <input type="tel" id="phone" name="phone" required class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition" placeholder="07123 456789">
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-100 pt-6 space-y-4">
+                        <h3 class="text-sm font-bold text-gray-700 uppercase tracking-wider">Child / Young Person Details</h3>
+                        
+                        <div>
+                            <label for="child_name" class="block text-sm font-medium text-gray-700 mb-1">Name of Child/Young Person <span class="text-gray-400 normal-case font-normal">(optional)</span></label>
+                            <input type="text" id="child_name" name="child_name" class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                        </div>
+
+                        <div>
+                            <label for="child_age" class="block text-sm font-medium text-gray-700 mb-1">Age of Child/Young Person</label>
+                            <input type="number" id="child_age" name="child_age" min="0" max="25" class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition" placeholder="e.g. 8">
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-100 pt-6 space-y-4">
+                        <h3 class="text-sm font-bold text-gray-700 uppercase tracking-wider">Photo Permission</h3>
+                        <p class="text-sm text-gray-500">Do you give permission for photographs of you/my child to be used in Slough SEND Parent Carer Forum publications, reports or social media?</p>
+                        
+                        <div class="space-y-3 mt-2">
+                            <div class="relative flex items-center">
+                                <input type="radio" id="photo_yes" name="photo_permission" value="yes" class="opacity-0 absolute h-5 w-5 cursor-pointer">
+                                <label for="photo_yes" class="radio-card flex-1 block w-full p-3 border-2 border-gray-200 rounded-lg cursor-pointer text-sm text-gray-700">
+                                    <span class="font-semibold text-teal-700">Yes,</span> I give permission for photographs to be used.
+                                </label>
+                            </div>
+                            <div class="relative flex items-center">
+                                <input type="radio" id="photo_no" name="photo_permission" value="no" class="opacity-0 absolute h-5 w-5 cursor-pointer" checked>
+                                <label for="photo_no" class="radio-card flex-1 block w-full p-3 border-2 border-gray-200 rounded-lg cursor-pointer text-sm text-gray-700">
+                                    <span class="font-semibold text-red-600">No,</span> I do NOT give permission for photographs to be used.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-gray-100 pt-6 space-y-4">
+                        <h3 class="text-sm font-bold text-gray-700 uppercase tracking-wider">Verification & Signature</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="signature" class="block text-sm font-medium text-gray-700 mb-1">Signature <span class="text-gray-400 normal-case font-normal">(Type full name)</span></label>
+                                <input type="text" id="signature" name="signature" required class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                            </div>
+                            <div>
+                                <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Date</label>
+                                <input type="date" id="date" name="date" required class="block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                            </div>
+                        </div>
+
+                        <!-- Terms Checkbox -->
+                        <div class="flex items-start mt-4">
+                            <div class="flex items-center h-5">
+                                <input id="terms" name="terms" type="checkbox" required class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="terms" class="font-medium text-gray-700">I agree to the terms of the <a href="#" class="text-teal-600 hover:underline">Privacy Policy</a></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-4">
+                        <button type="submit" class="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-300">
+                            Submit Application
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </button>
+                        <p class="text-center text-xs text-gray-400 mt-3">Your application will be reviewed by our admin team before access is granted.</p>
+                    </div>
+                </form>
+
+                <!-- Login Link -->
+                <p class="text-center text-sm text-gray-600 mt-6">
+                    Already a member? <a href="login.html" class="font-medium text-teal-600 hover:text-teal-500">Log in here</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Set today's date as default for the Date field
+        const dateInput = document.getElementById('date');
+        if (dateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.value = today;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefits & Finances · Slough SEND Parent Carer Forum</title>
+    <meta name="description" content="An overview of SEND-related financial help — DLA, PIP, Carer's Allowance, Universal Credit elements, charity grants, and everyday savings like council tax reductions and VAT relief.">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #2c7a7b 0%, #4fd1c5 100%); }
+        /* Smooth anchor scrolling + offset for the fixed navbar */
+        html { scroll-behavior: smooth; }
+        section[id] { scroll-margin-top: 6rem; }
+        .jump-card-icon { transition: transform 0.3s ease; }
+        .jump-card:hover .jump-card-icon { transform: scale(1.1) rotate(-5deg); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-teal-700 text-lg leading-none">Slough SEND</span>
+                        <span class="text-xs text-gray-500 leading-none mt-1">Parent Carer Forum</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-teal-600 font-medium transition">About Us</a>
+                    <a href="events.html" class="text-gray-600 hover:text-teal-600 font-medium transition">Events</a>
+                    <!-- "Support" stays active — this is a sub-page of Support & Resources -->
+                    <a href="support.html" class="text-teal-700 font-bold transition">Support</a>
+                    <a href="#" class="text-teal-700 border border-teal-700 px-5 py-2 rounded-full hover:bg-teal-50 font-medium transition">Login</a>
+                    <a href="#" class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 font-medium shadow-sm transition">Join Forum</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-gray-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="flex flex-col p-4 space-y-3">
+                <a href="index.html" class="text-gray-600 hover:text-teal-600 font-medium">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-teal-600 font-medium">About Us</a>
+                <a href="events.html" class="text-gray-600 hover:text-teal-600 font-medium">Events</a>
+                <a href="support.html" class="text-teal-700 font-bold">Support</a>
+                <div class="flex space-x-3 pt-2">
+                    <a href="#" class="flex-1 text-center text-teal-700 border border-teal-700 px-4 py-2 rounded-full font-medium">Login</a>
+                    <a href="#" class="flex-1 text-center bg-orange-500 text-white px-4 py-2 rounded-full font-medium">Join Forum</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <header class="pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-bg z-0"></div>
+        <div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-medium mb-4">Guidance & Help</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">What You Might Be<br>Entitled To</h1>
+            <p class="text-lg text-teal-50 max-w-2xl mx-auto">Raising a child with SEND comes with real extra costs like therapies, equipment, lost income and more. There's more financial help available than most families realise. Here's an overview of what to look into.</p>
+        </div>
+    </header>
+
+    <!-- ===== DISCLAIMER + QUICK NAV ===== -->
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Disclaimer -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <div class="bg-amber-50 border border-amber-100 rounded-2xl p-5 flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-500 mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <p class="text-sm text-gray-600 leading-relaxed">This is not an exhaustive list and information may change. <span class="font-semibold text-amber-900">Always check the official sources before applying.</span></p>
+                </div>
+            </div>
+
+            <div class="text-center mb-10">
+                <span class="text-orange-600 font-semibold uppercase tracking-wide text-sm">On This Page</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-2">Jump to a Section</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- For your child -->
+                <a href="#your-child" class="jump-card group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                    <div class="jump-card-icon w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900">For Your Child</h3>
+                    <p class="text-sm text-gray-500 mt-1 flex-grow">Benefits for a disabled child</p>
+                    <div class="text-teal-600 font-semibold text-sm mt-4 inline-flex items-center">
+                        Explore
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:ml-2 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </div>
+                </a>
+
+                <!-- For you as a carer -->
+                <a href="#carer" class="jump-card group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                    <div class="jump-card-icon w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900">For You as a Carer</h3>
+                    <p class="text-sm text-gray-500 mt-1 flex-grow">Money and protections</p>
+                    <div class="text-purple-600 font-semibold text-sm mt-4 inline-flex items-center">
+                        Explore
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:ml-2 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </div>
+                </a>
+
+                <!-- Grants & one-off help -->
+                <a href="#grants" class="jump-card group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                    <div class="jump-card-icon w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Grants & One-Off Help</h3>
+                    <p class="text-sm text-gray-500 mt-1 flex-grow">Charity grants for costs</p>
+                    <div class="text-green-600 font-semibold text-sm mt-4 inline-flex items-center">
+                        Explore
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:ml-2 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </div>
+                </a>
+
+                <!-- Everyday savings -->
+                <a href="#savings" class="jump-card group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                    <div class="jump-card-icon w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12.172V5a2 2 0 012-2h2z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900">Everyday Savings</h3>
+                    <p class="text-sm text-gray-500 mt-1 flex-grow">Reductions & Exemptions</p>
+                    <div class="text-orange-600 font-semibold text-sm mt-4 inline-flex items-center">
+                        Explore
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 group-hover:ml-2 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="support.html" class="inline-flex items-center text-teal-700 font-medium hover:text-teal-600 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                    Back to all Support & Resources
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 01: FOR YOUR CHILD ===== -->
+    <section id="your-child" class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-start mb-10">
+                <div class="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-2xl gradient-bg flex items-center justify-center text-white font-bold text-lg mr-4 md:mr-5">01</div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">For your child</h2>
+                    <p class="text-gray-600 mt-2 md:text-lg">Benefits paid to support a disabled child or young person.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- DLA -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-teal-50 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full border border-teal-100 mb-3">Under 16</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Disability Living Allowance (DLA)</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5">A tax-free benefit for children under 16 who need more care, supervision or help getting around than other children their age. <span class="font-semibold text-gray-800">No diagnosis required</span> — it is based on the support your child actually needs. <span class="font-semibold text-gray-800">Not means-tested.</span> Rates range from around £30 to £195 a week (2026/27).</p>
+                    <a href="https://www.gov.uk/dla-disability-living-allowance-benefit" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-teal-700 font-semibold text-sm hover:text-teal-800 transition">
+                        How to apply on Gov.uk
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+
+                <!-- PIP -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-teal-50 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full border border-teal-100 mb-3">16 and over</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Personal Independence Payment (PIP)</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5">Replaces DLA when your child turns 16. They'll be invited to apply by the DWP, and it's a fresh assessment, so a previous DLA award doesn't guarantee PIP. Worth getting help from SENDIASS or Citizens Advice for the form.</p>
+                    <a href="https://www.gov.uk/pip" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-teal-700 font-semibold text-sm hover:text-teal-800 transition">
+                        PIP on Gov.uk
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+
+                <!-- Motability -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-teal-50 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full border border-teal-100 mb-3">Higher rate mobility</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Motability Scheme</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5">If your child gets the higher rate mobility component of DLA (from age 3) or the enhanced rate of PIP, you can use that money to lease a car, powered wheelchair or scooter through Motability.</p>
+                    <a href="https://www.motability.co.uk" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-teal-700 font-semibold text-sm hover:text-teal-800 transition">
+                        Motability Scheme
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 02: FOR YOU AS A CARER ===== -->
+    <section id="carer" class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-start mb-10">
+                <div class="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-purple-500 flex items-center justify-center text-white font-bold text-lg mr-4 md:mr-5">02</div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">For you as a carer</h2>
+                    <p class="text-gray-600 mt-2 md:text-lg">Money and protections for the person doing the caring.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Carer's Allowance -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-purple-50 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full border border-purple-100 mb-3">35+ hours/week</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Carer's Allowance</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5"><span class="font-semibold text-gray-800">£86.45 a week (2026/27)</span> if you spend at least 35 hours a week caring for someone who gets DLA middle/highest care rate, PIP daily living, or Attendance Allowance. There's an earnings limit, so check before applying if you work.</p>
+                    <a href="https://www.gov.uk/carers-allowance" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-purple-700 font-semibold text-sm hover:text-purple-800 transition">
+                        Carer's Allowance on Gov.uk
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+
+                <!-- Carer's Credit -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-purple-50 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full border border-purple-100 mb-3">National Insurance</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Carer's Credit</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5">If you can't claim Carer's Allowance (often because you earn too much), Carer's Credit fills gaps in your National Insurance record so your State Pension isn't reduced for the years you spent caring.</p>
+                    <a href="https://www.gov.uk/carers-credit" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-purple-700 font-semibold text-sm hover:text-purple-800 transition">
+                        Carer's Credit on Gov.uk
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+
+                <!-- Universal Credit elements -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200 mb-3">Often missed</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Universal Credit – carer & disabled child elements</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5">If you're on UC, there's a carer element for caring 35+ hours a week, and a disabled child element paid on top of your standard UC if your child gets DLA or PIP. The disabled child element alone can be <span class="font-semibold text-gray-800">over £160 a month</span>, more if the child is severely disabled. Update your UC journal as soon as DLA is awarded.</p>
+                    <a href="https://www.gov.uk/universal-credit" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-purple-700 font-semibold text-sm hover:text-purple-800 transition">
+                        Universal Credit on Gov.uk
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 03: GRANTS & ONE-OFF HELP ===== -->
+    <section id="grants" class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-start mb-10">
+                <div class="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-green-500 flex items-center justify-center text-white font-bold text-lg mr-4 md:mr-5">03</div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Grants & one-off help</h2>
+                    <p class="text-gray-600 mt-2 md:text-lg">Charity grants for equipment, breaks, or specific costs.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Family Fund -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full border border-green-100 mb-3">The big one</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Family Fund</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5">The UK's largest grants programme for low-income families raising disabled or seriously ill children (0-17). Funds things like sensory equipment, white goods, family breaks, tablets and clothing. No diagnosis needed, and eligibility is based on care needs across at least three areas. Opens every 24 months.</p>
+                    <a href="https://www.familyfund.org.uk" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-green-700 font-semibold text-sm hover:text-green-800 transition">
+                        Family Fund
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+
+                <!-- Newlife -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full border border-green-100 mb-3">Equipment</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Newlife Foundation</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5">Grants for specialist equipment, specialist chairs, beds, communication aids, that the NHS or council won't fund. They also run an emergency loan service for terminally ill children.</p>
+                    <a href="https://newlifecharity.co.uk" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-green-700 font-semibold text-sm hover:text-green-800 transition">
+                        Newlife
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+
+                <!-- Cerebra -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full border border-green-100 mb-3">Brain conditions</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Cerebra</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5">For children with conditions affecting the brain. Free sleep service, a lending library of toys and equipment, a legal entitlements service, and a parent guide library covering everything from EHCPs to challenging behaviour.</p>
+                    <a href="https://cerebra.org.uk" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-green-700 font-semibold text-sm hover:text-green-800 transition">
+                        Cerebra
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+
+                <!-- Caudwell Children -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full border border-green-100 mb-3">Equipment & therapy</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Caudwell Children</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5">Grants for specialist equipment, treatment (including autism assessments) and family support, for children under 18 with a disability or serious illness in households earning under £45k.</p>
+                    <a href="https://www.caudwellchildren.com" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-green-700 font-semibold text-sm hover:text-green-800 transition">
+                        Caudwell Children
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 04: EVERYDAY SAVINGS ===== -->
+    <section id="savings" class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-start mb-10">
+                <div class="shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-orange-500 flex items-center justify-center text-white font-bold text-lg mr-4 md:mr-5">04</div>
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Everyday savings</h2>
+                    <p class="text-gray-600 mt-2 md:text-lg">Reductions and exemptions that quietly add up.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Council tax -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full border border-amber-200 mb-3">Often missed</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Council tax disability reduction</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5">If your home has been adapted for a disabled person, extra space for a wheelchair, a downstairs bathroom or bedroom because of disability, your council tax can drop by one band. Apply through Slough Borough Council, and savings can be backdated.</p>
+                    <!-- TODO: Link to Slough Borough Council council tax discounts page -->
+                    <a href="https://www.slough.gov.uk" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-orange-600 font-semibold text-sm hover:text-orange-700 transition">
+                        Council tax discounts - Slough Council
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+
+                <!-- Blue Badge -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full border border-orange-100 mb-3">Parking</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Blue Badge</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5">A disabled parking permit. Automatic if your child gets the higher rate DLA mobility component. Otherwise apply through Slough Borough Council — non-physical disabilities such as autism and cognitive conditions can qualify too.</p>
+                    <a href="https://www.gov.uk/blue-badge" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-orange-600 font-semibold text-sm hover:text-orange-700 transition">
+                        Apply for a Blue Badge
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+
+                <!-- DFG -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full border border-orange-100 mb-3">Home adaptations</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Disabled Facilities Grant (DFG)</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5"><span class="font-semibold text-gray-800">Up to £30,000</span> from your council towards home adaptations — ramps, stairlifts, ground-floor bathrooms, widened doorways. Means-tested for adults, but <span class="font-semibold text-gray-800">not means-tested when it's for a disabled child.</span> Apply through Slough Borough Council.</p>
+                    <a href="https://www.gov.uk/disabled-facilities-grants" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-orange-600 font-semibold text-sm hover:text-orange-700 transition">
+                        DFG on Gov.uk
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+
+                <!-- Free school transport -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full border border-orange-100 mb-3">SEND</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Free school transport</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5">If your child can't reasonably walk to their nearest suitable school because of SEND, the council must arrange free transport. Eligibility runs through Slough's Local Offer.</p>
+                    <!-- TODO: Link to Slough's Local Offer page -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-orange-600 font-semibold text-sm hover:text-orange-700 transition">
+                        Slough Local Offer
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+
+                <!-- VAT relief -->
+                <div class="bg-white p-7 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <span class="self-start bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full border border-orange-100 mb-3">Tax exemption</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">VAT relief on disability equipment</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed flex-grow mb-5">When buying things designed for a disabled person — adapted clothing, sensory equipment, certain mobility aids — you may not have to pay VAT. Just tick the eligibility declaration at checkout.</p>
+                    <a href="https://www.gov.uk/vat-relief-for-disabled-people" target="_blank" rel="noopener noreferrer" class="self-start inline-flex items-center text-orange-600 font-semibold text-sm hover:text-orange-700 transition">
+                        VAT relief on Gov.uk
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-900 rounded-3xl p-10 md:p-12 text-center relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl"></div>
+
+                <div class="relative">
+                    <span class="inline-block bg-orange-500/20 text-orange-400 px-4 py-1 rounded-full text-sm font-medium mb-6">Not sure where to start?</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Not sure what you're entitled to?</h2>
+                    <p class="text-gray-300 max-w-xl mx-auto mb-8 leading-relaxed">Benefits rules change and the forms can be daunting. If you're not sure what to apply for first, speak to Slough SENDIASS or Citizens Advice — or get in touch and we'll point you towards the right support.</p>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <!-- TODO: Link to Slough SENDIASS website -->
+                        <a href="#" class="bg-white text-gray-900 px-7 py-3 rounded-full font-semibold hover:bg-gray-100 transition shadow-sm">Slough SENDIASS</a>
+                        <!-- TODO: Link to contact page / email -->
+                        <a href="#" class="bg-orange-500 text-white px-7 py-3 rounded-full font-semibold hover:bg-orange-600 transition">Contact Us</a>
+                    </div>
+
+                    <p class="text-xs text-gray-500 mt-8">Benefit rates and rules change often — always check the official source before applying.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-gray-900 text-gray-300 pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">S</div>
+                        <span class="font-bold text-white text-lg">Slough SEND PCF</span>
+                    </a>
+                    <p class="text-sm text-gray-400">Supporting families. Empowering voices. Creating positive change together. Every voice matters.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Emergency Contacts</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-red-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" fill-rule="evenodd"/></svg> NHS 111 - Non-emergency</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-blue-400" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" clip-rule="evenodd" fill-rule="evenodd"/></svg> 999 - Emergency Services</li>
+                        <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3 text-green-400" viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" fill-rule="evenodd"/><path d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" fill-rule="evenodd"/></svg> Childline - 0800 1111</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wide">Get Involved</h4>
+                    <p class="text-sm text-gray-400 mb-4">Become a member today and join our private community.</p>
+                    <a href="#" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-medium hover:bg-orange-600 transition">Request Access</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2023 Slough SEND Parent Carer Forum. Funded by the Department for Education. Independent of the council and NHS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar shadow on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
